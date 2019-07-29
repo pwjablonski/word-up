@@ -1,0 +1,1 @@
+{"ast":null,"code":"/** PURE_IMPORTS_START _observable_combineLatest PURE_IMPORTS_END */\nimport { CombineLatestOperator } from '../observable/combineLatest';\nexport function combineAll(project) {\n  return function (source) {\n    return source.lift(new CombineLatestOperator(project));\n  };\n}","map":null,"metadata":{},"sourceType":"module"}
