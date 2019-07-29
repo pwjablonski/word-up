@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - "stable"
+branches:
+  only:
+    - master
+cache:
+  yarn: true
+  directories:
+  - node_modules
+before_deploy:
+    - yarn build
+deploy:
+  on:
+    branch: master
+    repo: pwjablonski/word-up
+  provider: firebase
+  skip_cleanup: true
+  token:
+    secure: $firebase
+  project: "word-up-dev"
