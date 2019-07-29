@@ -24,7 +24,6 @@ export default createLogic({
     const selectedCell = currentPuzzleGrid.find(function(item){
         return clueNum === item.clueNum
     });
-    console.log(selectedCell)
     dispatch(updateUI(selectedCell.index, direction));
 
     done();

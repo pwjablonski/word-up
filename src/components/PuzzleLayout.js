@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import Board from "./Board";
 import ClueBar from "./ClueBar";
 import ClueList from "./ClueList";
+import PuzzleHeader from "./PuzzleHeader";
 import { getClueLists } from "../selectors";
 
 export default function PuzzleLayout() {
@@ -12,6 +13,7 @@ export default function PuzzleLayout() {
   return (
     <div className="layout">
       <div className="layout-left">
+        <PuzzleHeader/>
         <Board />
       </div>
       <div className="layout-right">

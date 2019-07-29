@@ -1,0 +1,1 @@
+{"ast":null,"code":"/** PURE_IMPORTS_START _Subject,_multicast PURE_IMPORTS_END */\nimport { Subject } from '../Subject';\nimport { multicast } from './multicast';\nexport function publish(selector) {\n  return selector ? multicast(function () {\n    return new Subject();\n  }, selector) : multicast(new Subject());\n}","map":null,"metadata":{},"sourceType":"module"}
