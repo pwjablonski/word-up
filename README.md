@@ -1,10 +1,7 @@
 # Word Up
 
 ## About
-Word Up allows you to creat crossword puzzles! Go to https://word-up.web.app/ to play!
-
-Upload any .puz file to get start then click the Share button to send an inviation code to your friends!
-
+Word Up allows you to create crossword puzzles! Go to https://word-up.web.app/ to play!
 
 Happy Constructing!
 
@@ -12,12 +9,12 @@ Happy Constructing!
 ## Want to contribute?
 
 
-### `npm start`
+### `yarn start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm test`
+### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
