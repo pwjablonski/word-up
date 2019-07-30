@@ -47,9 +47,20 @@ ol, ul {
   width: 48%;
 }
 
+.layout-right {
+  max-height: 625px;
+  height: 100%;
+  width: 48%;
+}
+
 @media (max-width: 960px){
   .layout-right {
-      flex-direction: column;
+      width: 100%;
+  }
+
+  .layout-left {
+    flex-direction: column;
+    width: 100%;
   }
 
   .layout {
@@ -57,13 +68,6 @@ ol, ul {
     align-items: center;
     justify-content: flex-start;
   }
-}
-
-.layout-right {
-  
-  max-height: 625px;
-  height: 100%;
-  width: 48%;
 }
 
 .clue-list {
@@ -86,7 +90,7 @@ ol, ul {
 
 .topbar {
   background-color: #fff;
-  border: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
   border-width: 1px 0;
   position: relative;
   width: 100%;

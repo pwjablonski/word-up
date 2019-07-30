@@ -20,6 +20,7 @@ export default function Board() {
 
   function onInput(e) {
     dispatch(keyInputted(e.key));
+    e.preventDefault();
   }
 
   return (
