@@ -8,7 +8,9 @@ import {
   updateHighlightedCells,
   updateCurrentDirection,
   clueListItemClicked,
-  updateUI
+  updateUI,
+  toggleTopBarMenu,
+  closeTopBarMenu
 } from "./ui";
 
 import { 
@@ -19,7 +21,7 @@ import {
   gridUpdated,
   clueTextChanged,
   authorChanged,
-  titleChanged
+  titleChanged,
 } from "./puzzles";
 
 export {
@@ -39,5 +41,7 @@ export {
   updateUI,
   clueTextChanged,
   authorChanged,
-  titleChanged
+  titleChanged,
+  toggleTopBarMenu,
+  closeTopBarMenu
 };

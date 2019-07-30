@@ -5,6 +5,8 @@ import {
   updateCurrentClue,
   updateHighlightedCells,
   updateCurrentDirection,
+  toggleTopBarMenu,
+  closeTopBarMenu
 } from "../actions";
 
 const initialState = {
@@ -12,6 +14,7 @@ const initialState = {
   currentDirection: "across",
   currentClueNum: 1,
   highlightedCells: [],
+  openTopBarMenu: null,
 };
 
 /* eslint-disable no-param-reassign */
@@ -35,6 +38,14 @@ export default handleActions(
     [updateCurrentDirection]: (state, { payload: { direction } }) =>
       produce(state, draft => {
         draft.currentDirection = direction;
+      }),
+    [toggleTopBarMenu]: (state, { payload: { name } }) =>
+      produce(state, draft => {
+        draft.openTopBarMenu = name === draft.openTopBarMenu ? null: name;
+      }),
+    [closeTopBarMenu]: (state) =>
+      produce(state, draft => {
+        draft.openTopBarMenu = null;
       }),
   },
   initialState

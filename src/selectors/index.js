@@ -12,6 +12,7 @@ import getCurrentPuzzle from "./getCurrentPuzzle";
 import getCurrentClueNum from "./getCurrentClueNum";
 import getCurrentClueText from "./getCurrentClueText";
 import getHighlightedLetters from "./getHighlightedLetters"
+import getOpenTopBarMenu from "./getOpenTopBarMenu"
 
 export {
   getCurrentCharacter,
@@ -28,4 +29,5 @@ export {
   getCurrentClueNum,
   getCurrentClueText,
   getHighlightedLetters,
+  getOpenTopBarMenu,
 };

@@ -31,3 +31,12 @@ export const updateUI = createAction(
   "UPDATE_UI",
   (nextCell, direction) => ({nextCell, direction})
 );
+
+export const toggleTopBarMenu = createAction(
+  "TOGGLE_TOP_BAR_MENU",
+  (name) => ({name})
+);
+
+export const closeTopBarMenu = createAction(
+  "CLOSE_TOP_BAR_MENU",
+);

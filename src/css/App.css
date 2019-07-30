@@ -119,6 +119,7 @@ ol, ul {
   display:flex;
   align-items:center;
   justify-content:center;
+  position: relative;
 }
 
 
@@ -141,6 +142,37 @@ ol, ul {
   background-color: transparent;
 }
 
+/* Topbar Menu */
+.topbar-menu{
+  border: 1px solid #e6e6e6;
+  position: absolute;
+  top: 55px;
+  right:0px;
+  display: flex;
+  flex-direction: column;
+  min-width: 8em;
+  max-height: 50vh;
+  max-width: 30em;
+  overflow: auto;
+}
+
+.topbar-menu-item {
+  background-color: #fff;
+    box-sizing: border-box;
+    color: #444;
+    display: block;
+    font-weight: 400;
+    line-height: 1.2em;
+    min-width: 100%;
+    padding: 1em .5em;
+    text-decoration: none;
+    white-space: nowrap;
+    border:none;
+}
+
+.topbar-menu-item:hover {
+  background-color: #e6e6e6;
+}
 /* Puzzle Header */
 
 .puzzle-header {

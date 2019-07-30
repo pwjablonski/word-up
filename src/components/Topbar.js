@@ -1,8 +1,6 @@
 import React from "react";
 import "../css/App.css";
-import ContentEditable from 'react-contenteditable'
-import { faCog } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SettingsMenu from "./SettingsMenu";
 
 export default function Topbar() {
   return (
@@ -11,13 +9,7 @@ export default function Topbar() {
           WU
       </div>
       <div className="topbar-tools">
-        <div className="topbar-button topbar-button-item">
-          <FontAwesomeIcon
-            className=""
-            icon={faCog}
-            size="2x"
-          />
-        </div>
+        <SettingsMenu/>
       </div>
     </div>
   );
