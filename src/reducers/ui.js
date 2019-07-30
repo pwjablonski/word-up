@@ -6,7 +6,8 @@ import {
   updateHighlightedCells,
   updateCurrentDirection,
   toggleTopBarMenu,
-  closeTopBarMenu
+  closeTopBarMenu,
+  toggleWordSelector
 } from "../actions";
 
 const initialState = {
@@ -15,6 +16,7 @@ const initialState = {
   currentClueNum: 1,
   highlightedCells: [],
   openTopBarMenu: null,
+  wordSelectorIsOpen: false,
 };
 
 /* eslint-disable no-param-reassign */
@@ -46,6 +48,10 @@ export default handleActions(
     [closeTopBarMenu]: (state) =>
       produce(state, draft => {
         draft.openTopBarMenu = null;
+      }),
+    [toggleWordSelector]: (state) =>
+      produce(state, draft => {
+        draft.wordSelectorIsOpen = !draft.wordSelectorIsOpen;
       }),
   },
   initialState

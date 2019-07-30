@@ -13,6 +13,8 @@ import getCurrentClueNum from "./getCurrentClueNum";
 import getCurrentClueText from "./getCurrentClueText";
 import getHighlightedLetters from "./getHighlightedLetters"
 import getOpenTopBarMenu from "./getOpenTopBarMenu"
+import isWordSelectorOpen from "./isWordSelectorOpen"
+import getWords from "./getWords"
 
 export {
   getCurrentCharacter,
@@ -30,4 +32,6 @@ export {
   getCurrentClueText,
   getHighlightedLetters,
   getOpenTopBarMenu,
+  isWordSelectorOpen,
+  getWords,
 };

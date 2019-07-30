@@ -40,3 +40,7 @@ export const toggleTopBarMenu = createAction(
 export const closeTopBarMenu = createAction(
   "CLOSE_TOP_BAR_MENU",
 );
+
+export const toggleWordSelector = createAction(
+  "TOGGLE_WORD_SELECTOR",
+);

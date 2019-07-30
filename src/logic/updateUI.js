@@ -3,16 +3,22 @@ import {
     updateCurrentCell,
     updateCurrentDirection,
     updateCurrentClue,
-    updateHighlightedCells
+    updateHighlightedCells,
+    fetchWords
 } from "../actions"
 import findClueAndHighlightedCells from "../util/findClueAndHighlightedCells"
-import { getCurrentPuzzleGrid } from "../selectors";
+import {
+  getCurrentPuzzleGrid,
+  // isWordSelectorOpen,
+} from "../selectors";
 
 export default createLogic({
   type: "UPDATE_UI",
   async process({getState, action}, dispatch, done) {
     const state = getState()
     const grid = getCurrentPuzzleGrid(state)
+    // const wordSelectorIsOpen = isWordSelectorOpen(state)
+
     dispatch(updateCurrentCell(action.payload.nextCell));
     dispatch(updateCurrentDirection(action.payload.direction));
 
@@ -21,9 +27,11 @@ export default createLogic({
       action.payload.nextCell,
       grid
     )
+    // if(wordSelectorIsOpen){
+      dispatch(fetchWords())
+    // }
     dispatch(updateCurrentClue(newClue));
     dispatch(updateHighlightedCells(newHighlightedCells));
-
     done();
   }
 });

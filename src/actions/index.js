@@ -10,7 +10,8 @@ import {
   clueListItemClicked,
   updateUI,
   toggleTopBarMenu,
-  closeTopBarMenu
+  closeTopBarMenu,
+  toggleWordSelector
 } from "./ui";
 
 import { 
@@ -23,6 +24,11 @@ import {
   authorChanged,
   titleChanged,
 } from "./puzzles";
+
+import { 
+  fetchWords,
+  wordsLoaded,
+} from "./words";
 
 export {
   cellSelected,
@@ -43,5 +49,8 @@ export {
   authorChanged,
   titleChanged,
   toggleTopBarMenu,
-  closeTopBarMenu
+  closeTopBarMenu,
+  toggleWordSelector,
+  fetchWords,
+  wordsLoaded
 };

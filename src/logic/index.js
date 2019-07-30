@@ -3,8 +3,9 @@ import createPuzzle from "./createPuzzle";
 import keyInputted from "./keyInputted";
 import cellSelected from "./cellSelected";
 import updatePuzzle from "./updatePuzzle";
-import updateUI from "./updateUI"
-import clueListItemClicked from "./clueListItemClicked"
+import updateUI from "./updateUI";
+import clueListItemClicked from "./clueListItemClicked";
+import fetchWords from "./fetchWords"
 
 
 export default [
@@ -15,4 +16,5 @@ export default [
   updatePuzzle,
   updateUI,
   clueListItemClicked,
+  fetchWords
 ];
