@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/App.css";
 import SettingsMenu from "./SettingsMenu";
+import DownloadMenu from "./DownloadMenu";
 
 export default function Topbar() {
   return (
@@ -9,6 +10,7 @@ export default function Topbar() {
           WU
       </div>
       <div className="topbar-tools">
+        <DownloadMenu/>
         <SettingsMenu/>
       </div>
     </div>

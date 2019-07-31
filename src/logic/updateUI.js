@@ -9,7 +9,7 @@ import {
 import findClueAndHighlightedCells from "../util/findClueAndHighlightedCells"
 import {
   getCurrentPuzzleGrid,
-  // isWordSelectorOpen,
+  isWordSelectorOpen,
 } from "../selectors";
 
 export default createLogic({
@@ -17,7 +17,7 @@ export default createLogic({
   async process({getState, action}, dispatch, done) {
     const state = getState()
     const grid = getCurrentPuzzleGrid(state)
-    // const wordSelectorIsOpen = isWordSelectorOpen(state)
+    const wordSelectorIsOpen = isWordSelectorOpen(state)
 
     dispatch(updateCurrentCell(action.payload.nextCell));
     dispatch(updateCurrentDirection(action.payload.direction));
@@ -27,9 +27,9 @@ export default createLogic({
       action.payload.nextCell,
       grid
     )
-    // if(wordSelectorIsOpen){
+    if(wordSelectorIsOpen){
       dispatch(fetchWords())
-    // }
+    }
     dispatch(updateCurrentClue(newClue));
     dispatch(updateHighlightedCells(newHighlightedCells));
     done();

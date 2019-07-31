@@ -8,10 +8,15 @@ export default createLogic({
   async process({getState, action}, dispatch, done) {
     const state = getState()
     const letters = getHighlightedLetters(state)
-    if(letters){
-      const query = letters.replace(/ /g, "").replace(/_/g, "?")
-      const words = await fetchWordsBySpelling(query)
-      dispatch(wordsLoaded(words))
+    if(letters && letters.match(/[a-z]/i)){
+      try {
+        const query = letters.replace(/ /g, "").replace(/_/g, "?")
+        const words = await fetchWordsBySpelling(query)
+        dispatch(wordsLoaded(words))
+      } catch (error) {
+        dispatch(wordsLoaded([]))
+      }
+      
     } else {
       dispatch(wordsLoaded([]))
     }

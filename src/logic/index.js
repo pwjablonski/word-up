@@ -6,6 +6,7 @@ import updatePuzzle from "./updatePuzzle";
 import updateUI from "./updateUI";
 import clueListItemClicked from "./clueListItemClicked";
 import fetchWords from "./fetchWords"
+import createPDF from "./createPDF"
 
 
 export default [
@@ -16,5 +17,6 @@ export default [
   updatePuzzle,
   updateUI,
   clueListItemClicked,
-  fetchWords
+  fetchWords,
+  createPDF
 ];

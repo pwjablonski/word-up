@@ -2,8 +2,11 @@
 import React, {useRef} from 'react';
 import { useDispatch } from "react-redux";
 
-import {toggleTopBarMenu, closeTopBarMenu} from '../actions';
-import useOutsideClick from "../customHooks/useOutsideClick";
+import {
+  toggleTopBarMenu,
+  // closeTopBarMenu
+} from '../actions';
+// import useOutsideClick from "../customHooks/useOutsideClick";
 
 
 export default function TopbarMenu({
@@ -13,9 +16,9 @@ export default function TopbarMenu({
     const dispatch = useDispatch();
     const ref = useRef();
 
-    useOutsideClick(ref, () => {
-      dispatch(closeTopBarMenu(name));
-    });
+    // useOutsideClick(ref, () => {
+    //   dispatch(closeTopBarMenu());
+    // });
 
     function onToggle() {
         dispatch(toggleTopBarMenu(name));

@@ -23,6 +23,7 @@ import {
   clueTextChanged,
   authorChanged,
   titleChanged,
+  createPDF,
 } from "./puzzles";
 
 import { 
@@ -52,5 +53,6 @@ export {
   closeTopBarMenu,
   toggleWordSelector,
   fetchWords,
-  wordsLoaded
+  wordsLoaded,
+  createPDF
 };

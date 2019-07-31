@@ -32,3 +32,5 @@ export const titleChanged = createAction("TITLE_CHANGED",
     (currentPuzzleKey, value) =>
     ({currentPuzzleKey, value})
 );
+
+export const createPDF = createAction("CREATE_PDF");
