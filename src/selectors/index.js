@@ -16,6 +16,7 @@ import getOpenTopBarMenu from "./getOpenTopBarMenu"
 import isWordSelectorOpen from "./isWordSelectorOpen"
 import getWords from "./getWords"
 import isSymmetryEnabled from "./isSymmetryEnabled"
+import isUserAuthenticated from "./isUserAuthenticated"
 
 export {
   getCurrentCharacter,
@@ -36,4 +37,5 @@ export {
   isWordSelectorOpen,
   getWords,
   isSymmetryEnabled,
+  isUserAuthenticated
 };

@@ -1,8 +1,16 @@
+import Cookies from 'js-cookie';
+import get from 'lodash/get';
 import once from "lodash/once";
+import isNil from 'lodash/isNil';
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import config from "../config";
+
+const VALID_SESSION_UID_COOKIE = 'firebaseAuth.validSessionUid';
+const SESSION_TTL_MS = 5 * 60 * 1000;
+
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 function buildFirebase(appName = undefined) {
   const app = firebase.initializeApp(
@@ -24,39 +32,38 @@ function buildFirebase(appName = undefined) {
   };
 }
 
-export const { loadDatabase } = buildFirebase();
+export const { auth, loadDatabase } = buildFirebase();
 
-export async function createPuzzle(puzzleData) {
-  const database = await loadDatabase();
-  return database.collection("puzzles").add(puzzleData);
+export async function signIn(provider) {
+  const originalOnerror = window.onerror;
+  window.onerror = message => message.toLowerCase().includes('network error');
+  try {
+    const userCredential = await signInWithGoogle();
+    return userCredential;
+  } finally {
+    setTimeout(() => {
+      window.onerror = originalOnerror;
+    });
+  }
 }
 
-export async function createPuzzleSession(session) {
-  const database = await loadDatabase();
-  return database
-    .collection("sessions")
-    .doc(session.currentSessionId)
-    .set(session);
+async function signInWithGoogle() {
+  return auth.signInWithPopup(googleAuthProvider);
 }
 
-export async function getSessionData(id) {
-  const database = await loadDatabase();
-  return database.doc(`sessions/${id}`).get();
+export function startSessionHeartbeat() {
+  setInterval(setSessionUid, 1000);
 }
 
-export async function getPuzzleData(id) {
-  const database = await loadDatabase();
-  return database.doc(`puzzles/${id}`).get();
+export function setSessionUid() {
+  const uid = get(auth, 'currentUser.uid');
+  if (!isNil(uid)) {
+    Cookies.set(VALID_SESSION_UID_COOKIE, uid, {
+      expires: new Date(Date.now() + SESSION_TTL_MS),
+    });
+  }
 }
 
-export async function listenForSessionDataChange(id, dispatch, action) {
-  const database = await loadDatabase();
-  return database.doc(`sessions/${id}`).onSnapshot(doc => {
-    dispatch(action(doc.data()));
-  });
-}
-
-export async function updateFill(id, fill) {
-  const database = await loadDatabase();
-  return database.doc(`sessions/${id}`).set({ fill }, { merge: true });
+export async function signOut() {
+  return auth.signOut();
 }
