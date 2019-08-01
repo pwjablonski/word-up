@@ -271,7 +271,14 @@ body {
   height: 100%;
 }
 
+
+
 @media (max-width: 960px) {
+  .cluelists {
+    height: auto;
+
+  }
+
   .cluelist {
       margin-bottom: 10px;
       width: 100%;
