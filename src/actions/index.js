@@ -24,6 +24,7 @@ import {
   authorChanged,
   titleChanged,
   createPDF,
+  generatePattern,
 } from "./puzzles";
 
 import { 
@@ -54,5 +55,6 @@ export {
   toggleWordSelector,
   fetchWords,
   wordsLoaded,
-  createPDF
+  createPDF,
+  generatePattern
 };

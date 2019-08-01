@@ -34,3 +34,5 @@ export const titleChanged = createAction("TITLE_CHANGED",
 );
 
 export const createPDF = createAction("CREATE_PDF");
+
+export const generatePattern = createAction("GENERATE_PATTERN");

@@ -7,6 +7,7 @@ import updateUI from "./updateUI";
 import clueListItemClicked from "./clueListItemClicked";
 import fetchWords from "./fetchWords"
 import createPDF from "./createPDF"
+import generatePattern from "./generatePattern"
 
 
 export default [
@@ -18,5 +19,6 @@ export default [
   updateUI,
   clueListItemClicked,
   fetchWords,
-  createPDF
+  createPDF,
+  generatePattern
 ];
