@@ -1,6 +1,8 @@
 /* eslint-disable react/no-multi-comp */
 import React, {useRef} from 'react';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {getOpenTopBarMenu} from '../selectors';
+import classnames from "classnames";
 
 import {
   toggleTopBarMenu,
@@ -15,7 +17,7 @@ export default function TopbarMenu({
 }) {
     const dispatch = useDispatch();
     const ref = useRef();
-
+    const isOpen = useSelector(getOpenTopBarMenu) === name;
     // useOutsideClick(ref, () => {
     //   dispatch(closeTopBarMenu());
     // });
@@ -26,7 +28,11 @@ export default function TopbarMenu({
 
     return(
       <div 
-        className="topbar-button topbar-button-item"
+        className={classnames(
+          "topbar-button",
+          "topbar-button-item",
+          {"topbar-button-item-active": isOpen}
+        )}
         onClick={onToggle}
         ref={ref}
       >
