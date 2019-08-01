@@ -15,6 +15,7 @@ import getHighlightedLetters from "./getHighlightedLetters"
 import getOpenTopBarMenu from "./getOpenTopBarMenu"
 import isWordSelectorOpen from "./isWordSelectorOpen"
 import getWords from "./getWords"
+import isSymmetryEnabled from "./isSymmetryEnabled"
 
 export {
   getCurrentCharacter,
@@ -34,4 +35,5 @@ export {
   getOpenTopBarMenu,
   isWordSelectorOpen,
   getWords,
+  isSymmetryEnabled,
 };

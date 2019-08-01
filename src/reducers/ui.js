@@ -7,7 +7,8 @@ import {
   updateCurrentDirection,
   toggleTopBarMenu,
   closeTopBarMenu,
-  toggleWordSelector
+  toggleWordSelector,
+  toggleSymmetry
 } from "../actions";
 
 const initialState = {
@@ -17,6 +18,7 @@ const initialState = {
   highlightedCells: [],
   openTopBarMenu: null,
   wordSelectorIsOpen: false,
+  symmetryIsEnabled: false,
 };
 
 /* eslint-disable no-param-reassign */
@@ -52,6 +54,10 @@ export default handleActions(
     [toggleWordSelector]: (state) =>
       produce(state, draft => {
         draft.wordSelectorIsOpen = !draft.wordSelectorIsOpen;
+      }),
+    [toggleSymmetry]: (state) =>
+      produce(state, draft => {
+        draft.symmetryIsEnabled = !draft.symmetryIsEnabled;
       }),
   },
   initialState

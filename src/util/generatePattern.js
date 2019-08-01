@@ -10,6 +10,7 @@ export default function generatePattern() {
         let shouldFillSquare = Math.random() < 0.5;
         if (shouldFillSquare && canFillSquare) {
             newGrid[i].fill= "."
+            newGrid[224-i].fill= "."
         }
     }
     return newGrid;

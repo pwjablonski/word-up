@@ -5,7 +5,8 @@ import {
 import {
   getCurrentPuzzle,
   getCurrentPuzzleKey,
-  getCurrentCell
+  getCurrentCell,
+  isSymmetryEnabled
 } from "../selectors"
 import updateClues from "../util/updateClues"
 import updateGridClueNums from "../util/updateGridClueNums"
@@ -17,8 +18,21 @@ export default createLogic({
     const currentPuzzle = getCurrentPuzzle(state)
     const currentPuzzleKey = getCurrentPuzzleKey(state)
     const currentCell = getCurrentCell(state)
+    const symmetryIsEnabled = isSymmetryEnabled(state)
+    
+    
+    if(symmetryIsEnabled && action.payload.key === "."){
+      currentPuzzle.grid[currentCell].fill = action.payload.key
+      const symmetricCell = 224 - currentCell;
+      currentPuzzle.grid[symmetricCell].fill = "."
+    } else if( symmetryIsEnabled && currentPuzzle.grid[currentCell].fill === "."){
+      currentPuzzle.grid[currentCell].fill = action.payload.key
+      const symmetricCell = 224 - currentCell;;
+      currentPuzzle.grid[symmetricCell].fill = ""
+    } else {
+      currentPuzzle.grid[currentCell].fill = action.payload.key
+    }
 
-    currentPuzzle.grid[currentCell].fill = action.payload.key
     const newGrid = updateGridClueNums(currentPuzzle.grid);
     const newClues = updateClues(newGrid, currentPuzzle.clues);
  

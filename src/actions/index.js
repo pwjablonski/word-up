@@ -11,7 +11,8 @@ import {
   updateUI,
   toggleTopBarMenu,
   closeTopBarMenu,
-  toggleWordSelector
+  toggleWordSelector,
+  toggleSymmetry
 } from "./ui";
 
 import { 
@@ -56,5 +57,6 @@ export {
   fetchWords,
   wordsLoaded,
   createPDF,
-  generatePattern
+  generatePattern,
+  toggleSymmetry
 };

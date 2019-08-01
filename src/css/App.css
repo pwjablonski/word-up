@@ -191,6 +191,14 @@ body {
 .topbar-menu-item:hover {
   background-color: #e6e6e6;
 }
+
+.topbar-button-item-active{
+  background-color: #e6e6e6;
+}
+
+.topbar-button-item-active:hover{
+  color: #000;
+}
 /* Puzzle Header */
 
 .puzzle-header {
