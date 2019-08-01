@@ -74,12 +74,6 @@ body {
   }
 }
 
-.clue-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
 .puzzle__loading{
   display: flex;
   flex-direction: column;
@@ -264,6 +258,13 @@ body {
 }
 
 /* Clue List */
+.cluelists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: calc(100% - 75px);
+}
+
 .cluelist {
   margin-bottom: 10px;
   width: 45%;

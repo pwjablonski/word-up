@@ -18,7 +18,7 @@ export default function PuzzleLayout() {
       </div>
       <div className="layout-right">
         <ClueBar />
-        <div className="clue-list">
+        <div className="cluelists">
           <ClueList clues={clues.across} direction="across" />
           <ClueList clues={clues.down} direction="down" />
         </div> 
