@@ -33,6 +33,14 @@ import {
   wordsLoaded,
 } from "./words";
 
+import {
+  logIn,
+  handleAuthChange,
+  userAuthenticated,
+  logOut,
+  userLoggedOut,
+} from "./user"
+
 export {
   cellSelected,
   keyInputted,
@@ -58,5 +66,10 @@ export {
   wordsLoaded,
   createPDF,
   generatePattern,
-  toggleSymmetry
+  toggleSymmetry,
+  logIn,
+  handleAuthChange,
+  userAuthenticated,
+  logOut,
+  userLoggedOut,
 };
