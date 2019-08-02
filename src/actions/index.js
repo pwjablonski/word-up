@@ -37,7 +37,8 @@ import {
   logIn,
   handleAuthChange,
   userAuthenticated,
-  logOut
+  logOut,
+  userLoggedOut,
 } from "./user"
 
 export {
@@ -69,5 +70,6 @@ export {
   logIn,
   handleAuthChange,
   userAuthenticated,
-  logOut
+  logOut,
+  userLoggedOut,
 };

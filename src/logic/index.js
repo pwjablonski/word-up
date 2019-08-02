@@ -8,8 +8,10 @@ import clueListItemClicked from "./clueListItemClicked";
 import fetchWords from "./fetchWords"
 import createPDF from "./createPDF"
 import generatePattern from "./generatePattern"
-import handleLogIn from "./handleLogIn"
+import manageAuth from "./manageAuth"
 import handleAuthChange from "./handleAuthChange"
+import logIn from "./logIn"
+import logOut from "./logOut"
 
 
 export default [
@@ -23,6 +25,8 @@ export default [
   fetchWords,
   createPDF,
   generatePattern,
-  handleLogIn,
-  handleAuthChange
+  manageAuth,
+  handleAuthChange,
+  logIn,
+  logOut,
 ];

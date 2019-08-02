@@ -64,6 +64,10 @@ export function setSessionUid() {
   }
 }
 
+export function getSessionUid() {
+  return Cookies.get(VALID_SESSION_UID_COOKIE);
+}
+
 export async function signOut() {
   return auth.signOut();
 }

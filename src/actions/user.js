@@ -11,3 +11,5 @@ export const userAuthenticated = createAction('USER_AUTHENTICATED',
 );
 
 export const logOut = createAction('LOG_OUT');
+
+export const userLoggedOut = createAction('USER_LOGGED_OUT');

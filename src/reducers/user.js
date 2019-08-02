@@ -2,6 +2,7 @@ import produce from "immer";
 import { handleActions } from "redux-actions";
 import {
     userAuthenticated,
+    userLoggedOut
 } from "../actions";
 
 const initialState = {
@@ -26,6 +27,10 @@ export default handleActions(
             displayName: user.displayName,
             avatarUrl: user.photoURL,
         }
+      }),
+    [userLoggedOut]: (state, action ) =>
+      produce(state, draft => {
+        draft.loginState = "ANONYMOUS";
       }),
 
   },
