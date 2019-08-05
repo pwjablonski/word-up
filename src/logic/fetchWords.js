@@ -1,14 +1,14 @@
 import { createLogic } from "redux-logic";
 import { getHighlightedLetters } from "../selectors";
 import fetchWordsBySpelling from "../clients/datamuse"
-import { wordsLoaded } from "../actions";
+import { wordsLoaded, closeWordSelector } from "../actions";
 
 export default createLogic({
-  type: "FETCH_WORDS",
+  type: "SEARCH_WORD",
   async process({getState, action}, dispatch, done) {
     const state = getState()
     const letters = getHighlightedLetters(state)
-    if(letters && letters.match(/[a-z]/i)){
+    if(letters){
       try {
         const query = letters.replace(/ /g, "").replace(/_/g, "?")
         const words = await fetchWordsBySpelling(query)
@@ -19,6 +19,7 @@ export default createLogic({
       
     } else {
       dispatch(wordsLoaded([]))
+      dispatch(closeWordSelector())
     }
     
     done();

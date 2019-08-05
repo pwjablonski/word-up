@@ -2,10 +2,10 @@ import React from "react";
 import "../css/App.css";
 import { useSelector, useDispatch } from "react-redux";
 import WordSelector from "./WordSelector";
-import {faChevronDown} from '@fortawesome/free-solid-svg-icons';
+import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {faChevronUp} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {toggleWordSelector} from '../actions'
+import {searchWord, closeWordSelector} from '../actions'
 
 import {
   getCurrentClueNum,
@@ -27,8 +27,12 @@ export default function ClueBar() {
     num = `${clueNum}${letter}`
   }
 
-  function onToggleWordSelector(){
-    dispatch(toggleWordSelector())
+  function onSearchWord(){
+    dispatch(searchWord())
+  }
+
+  function onCloseWordSelector(){
+    dispatch(closeWordSelector())
   }
 
   return (
@@ -41,14 +45,14 @@ export default function ClueBar() {
         {
           wordSelectorIsOpen ? 
             <FontAwesomeIcon
-            onClick={onToggleWordSelector}
+            onClick={onCloseWordSelector}
             className="cluebar-arrow"
             icon={faChevronUp}
             /> :
             <FontAwesomeIcon
-              onClick={onToggleWordSelector}
+              onClick={onSearchWord}
               className="cluebar-arrow"
-              icon={faChevronDown}
+              icon={faSearch}
             /> 
         }
       </div>

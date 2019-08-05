@@ -11,10 +11,11 @@ import {
   updateUI,
   toggleTopBarMenu,
   closeTopBarMenu,
-  toggleWordSelector,
+  openWordSelector,
   toggleSymmetry,
   openPuzzleSelector,
-  closePuzzleSelector
+  closePuzzleSelector,
+  closeWordSelector
 } from "./ui";
 
 import { 
@@ -34,7 +35,7 @@ import {
 } from "./puzzles";
 
 import { 
-  fetchWords,
+  searchWord,
   wordsLoaded,
 } from "./words";
 
@@ -66,8 +67,8 @@ export {
   titleChanged,
   toggleTopBarMenu,
   closeTopBarMenu,
-  toggleWordSelector,
-  fetchWords,
+  openWordSelector,
+  searchWord,
   wordsLoaded,
   createPDF,
   generatePattern,
@@ -81,5 +82,6 @@ export {
   puzzlesLoaded,
   openPuzzleSelector,
   closePuzzleSelector,
-  changeCurrentPuzzle
+  changeCurrentPuzzle,
+  closeWordSelector
 };

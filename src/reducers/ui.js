@@ -7,11 +7,12 @@ import {
   updateCurrentDirection,
   toggleTopBarMenu,
   closeTopBarMenu,
-  toggleWordSelector,
   toggleSymmetry,
   openPuzzleSelector,
   closePuzzleSelector,
-  changeCurrentPuzzle
+  changeCurrentPuzzle,
+  closeWordSelector,
+  wordsLoaded
 } from "../actions";
 
 const initialState = {
@@ -55,10 +56,6 @@ export default handleActions(
       produce(state, draft => {
         draft.openTopBarMenu = null;
       }),
-    [toggleWordSelector]: (state) =>
-      produce(state, draft => {
-        draft.wordSelectorIsOpen = !draft.wordSelectorIsOpen;
-      }),
     [toggleSymmetry]: (state) =>
       produce(state, draft => {
         draft.symmetryIsEnabled = !draft.symmetryIsEnabled;
@@ -74,6 +71,14 @@ export default handleActions(
     [changeCurrentPuzzle]: (state) =>
       produce(state, draft => {
         draft.puzzleSelectorIsOpen = false;
+      }),
+    [closeWordSelector]: (state) =>
+      produce(state, draft => {
+        draft.wordSelectorIsOpen = false;
+      }),
+    [wordsLoaded]: (state) =>
+      produce(state, draft => {
+        draft.wordSelectorIsOpen = true;
       }),
   },
   initialState

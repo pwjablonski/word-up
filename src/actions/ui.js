@@ -41,8 +41,12 @@ export const closeTopBarMenu = createAction(
   "CLOSE_TOP_BAR_MENU",
 );
 
-export const toggleWordSelector = createAction(
-  "TOGGLE_WORD_SELECTOR",
+export const openWordSelector = createAction(
+  "OPEN_WORD_SELECTOR",
+);
+
+export const closeWordSelector = createAction(
+  "CLOSE_WORD_SELECTOR",
 );
 
 export const toggleSymmetry = createAction(

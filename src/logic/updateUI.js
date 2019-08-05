@@ -4,7 +4,7 @@ import {
     updateCurrentDirection,
     updateCurrentClue,
     updateHighlightedCells,
-    fetchWords
+    searchWord
 } from "../actions"
 import findClueAndHighlightedCells from "../util/findClueAndHighlightedCells"
 import {
@@ -27,8 +27,9 @@ export default createLogic({
       action.payload.nextCell,
       grid
     )
+
     if(wordSelectorIsOpen){
-      dispatch(fetchWords())
+      dispatch(searchWord())
     }
     dispatch(updateCurrentClue(newClue));
     dispatch(updateHighlightedCells(newHighlightedCells));

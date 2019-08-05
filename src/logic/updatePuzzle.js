@@ -21,7 +21,6 @@ export default createLogic({
     const currentCell = getCurrentCell(state)
     const symmetryIsEnabled = isSymmetryEnabled(state)
     
-    
     if(symmetryIsEnabled && action.payload.key === "."){
       currentPuzzle.grid[currentCell].fill = action.payload.key
       const symmetricCell = 224 - currentCell;
