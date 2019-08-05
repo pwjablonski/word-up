@@ -15,11 +15,13 @@ export default function WordSelector() {
         <span className="word-selector-attribution">
           Powered by Datamuse, Makers of <a href="https://www.onelook.com/">OneLook</a>
         </span>
-        {
-          words.map((word)=>{
-            return <li key={word.word}>{word.word}</li>
-          })
-        }
+        <div className="word-selector-words">
+          {
+            words.map((word)=>{
+              return <div className={"word-selector-word"}key={word.word}>{word.word}</div>
+            })
+          }
+        </div>
     </div>
   );
 }

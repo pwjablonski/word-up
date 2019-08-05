@@ -2,6 +2,7 @@ import { createLogic } from "redux-logic";
 import { getHighlightedLetters } from "../selectors";
 import fetchWordsBySpelling from "../clients/datamuse"
 import { wordsLoaded, closeWordSelector } from "../actions";
+import { isEmpty } from "lodash";
 
 export default createLogic({
   type: "SEARCH_WORD",
@@ -12,13 +13,18 @@ export default createLogic({
       try {
         const query = letters.replace(/ /g, "").replace(/_/g, "?")
         const words = await fetchWordsBySpelling(query)
-        dispatch(wordsLoaded(words))
+        if(isEmpty(words)){
+          dispatch(wordsLoaded([{word: "No Results"}]))
+        } else {
+          dispatch(wordsLoaded(words))
+        }
+        
       } catch (error) {
-        dispatch(wordsLoaded([]))
+        dispatch(wordsLoaded([{word: "Error"}]))
       }
       
     } else {
-      dispatch(wordsLoaded([]))
+      dispatch(wordsLoaded([{word: "No Results"}]))
       dispatch(closeWordSelector())
     }
     

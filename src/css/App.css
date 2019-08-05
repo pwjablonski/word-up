@@ -254,7 +254,16 @@ body {
 .word-selector-attribution{
   font-style: italic;
   font-size: 0.5em;
-  margin-bottom: .5em; 
+  margin-bottom: 1em; 
+}
+
+.word-selector-words{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.word-selector-word{
+  width: 33%;
 }
 
 /* Clue List */
