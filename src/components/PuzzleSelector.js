@@ -1,7 +1,8 @@
 import React from "react";
 import "../css/App.css";
+import classnames from "classnames"
 import { useSelector, useDispatch } from "react-redux";
-import {isPuzzleSelectorOpen, getPuzzles } from "../selectors"
+import {isPuzzleSelectorOpen, getPuzzles, getCurrentPuzzleKey } from "../selectors"
 import {
     closePuzzleSelector,
     changeCurrentPuzzle
@@ -10,6 +11,7 @@ import Modal from '../components/Modal'
 
 export default function WordSelector() {
   const dispatch = useDispatch()
+  const currentPuzzleKey = useSelector(getCurrentPuzzleKey);
   const isOpen = useSelector(isPuzzleSelectorOpen);
   const puzzles = useSelector(getPuzzles);
 
@@ -37,7 +39,10 @@ export default function WordSelector() {
             return (
                 <div
                   key={puzzles[key].puzzleKey}
-                  className="puzzle-selector-item"
+                  className={classnames(
+                    "puzzle-selector-item",
+                    {"puzzle-selector-item-active": key === currentPuzzleKey}
+                  )}
                   onClick={()=>onChangeCurrentPuzzle(puzzles[key].puzzleKey)}
                 >
                   {puzzles[key].title}

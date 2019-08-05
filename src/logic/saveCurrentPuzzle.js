@@ -9,7 +9,7 @@ import {
 import isPristinePuzzle from "../util/isPristinePuzzle"
 
 export default createLogic({
-  type: "SAVE_CURRENT_PUZZLE",
+  type: ["SAVE_CURRENT_PUZZLE", "AUTHOR_CHANGED", "TITLE_CHANGED", "CLUE_TEXT_CHANGED"],
   async process({getState, action }, dispatch, done) {
     const state = getState()
     const currentPuzzle = getCurrentPuzzle(state)
@@ -17,6 +17,7 @@ export default createLogic({
     if (currentPuzzle && currentUserId 
       && !isPristinePuzzle(currentPuzzle)
       ) {
+      console.log(currentPuzzle)
       savePuzzle(currentUserId, currentPuzzle);
     }
     done();

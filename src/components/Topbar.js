@@ -18,13 +18,14 @@ import {
   openPuzzleSelector
 } from '../actions';
 import {
-  isSymmetryEnabled
+  isSymmetryEnabled, isUserAuthenticated
 } from '../selectors'
 import BoardLayoutMenu from "./BoardLayoutMenu";
 
 export default function Topbar() {
   const dispatch = useDispatch();
   const symmetryIsEnabled = useSelector(isSymmetryEnabled);
+  const userIsAuthenticated = useSelector(isUserAuthenticated);
 
   function onToggleSymmetry(){
     dispatch(toggleSymmetry());
@@ -44,20 +45,26 @@ export default function Topbar() {
           WU
       </div>
       <div className="topbar-tools">
-        <div 
-          className="topbar-button topbar-button-item"
-          title="New Project"
-          onClick={onCreateNewPuzzle}
-        >
-          <FontAwesomeIcon icon={faPlusSquare} size="2x"/> 
-        </div>
-        <div 
-          className="topbar-button topbar-button-item"
-          title="New Project"
-          onClick={onOpenPuzzleSelector}
-        >
-          <FontAwesomeIcon icon={faFolderOpen} size="2x"/> 
-        </div>
+        {userIsAuthenticated ? (
+          <>
+            <div 
+              className="topbar-button topbar-button-item"
+              title="New Project"
+              onClick={onCreateNewPuzzle}
+            >
+              <FontAwesomeIcon icon={faPlusSquare} size="2x"/> 
+            </div>
+            <div 
+              className="topbar-button topbar-button-item"
+              title="New Project"
+              onClick={onOpenPuzzleSelector}
+            >
+              <FontAwesomeIcon icon={faFolderOpen} size="2x"/> 
+            </div>
+          </>
+        ):
+         null
+        }
         <div 
           className={classnames(
             "topbar-button",

@@ -7,9 +7,12 @@ import {
   authorChanged,
   titleChanged,
   puzzlesLoaded,
-  clueTextChanged
+  clueTextChanged,
+  userLoggedOut
 } from "../actions";
+
 import createEmptyPuzzle from "../util/createEmptyPuzzle"
+import isPristinePuzzle from "../util/isPristinePuzzle"
 
 const initialState = {};
 
@@ -18,7 +21,16 @@ export default handleActions(
   {
     [puzzleCreated]: (state, { payload: { puzzleKey } }) =>
       produce(state, draft => {
-        draft[puzzleKey] = createEmptyPuzzle(puzzleKey, 15, 15);
+        let puzzles ={}
+        Object.keys(state).forEach(function(key){
+          if(key === puzzleKey || !isPristinePuzzle(state[key])){
+            puzzles[key] = state[key];
+          }
+        });
+
+        puzzles[puzzleKey] = createEmptyPuzzle(puzzleKey, 15, 15);
+        draft = puzzles
+        return puzzles
       }),
     [updateCellFill]: (state, { payload: { currentPuzzleKey, cell, fill }, meta: {timestamp} }) =>
       produce(state, draft => {
@@ -50,6 +62,10 @@ export default handleActions(
       produce(state, draft => {
         draft = {...state, ...puzzles};
         return draft
+      }),
+    [userLoggedOut]: (state, action ) =>
+      produce(state, draft => {
+        // update
       }),
 
   },

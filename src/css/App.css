@@ -410,3 +410,7 @@ body {
 .puzzle-selector-item:hover{
   background-color: #e6e6e6
 }
+
+.puzzle-selector-item-active{
+  background-color: #e6e6e6
+}
