@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/App.css";
 import classnames from "classnames"
+import moment from 'moment'
 import { useSelector, useDispatch } from "react-redux";
 import {isPuzzleSelectorOpen, getPuzzles, getCurrentPuzzleKey } from "../selectors"
 import {
@@ -45,7 +46,8 @@ export default function WordSelector() {
                   )}
                   onClick={()=>onChangeCurrentPuzzle(puzzles[key].puzzleKey)}
                 >
-                  {puzzles[key].title}
+                  <span>{puzzles[key].title}</span>
+                  <span>{puzzles[key].updatedAt ? moment(puzzles[key].updatedAt).fromNow() : null}</span>
                 </div>
             )
           })

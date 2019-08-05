@@ -364,7 +364,7 @@ body {
   box-sizing: border-box;
   max-height: 95%;
   max-width: 500px;
-  min-width: 300px;
+  min-width: 400px;
   outline: none;
   padding: 2% 2% 2% 2%;
   pointer-events: visible;
@@ -400,6 +400,8 @@ body {
 }
 
 .puzzle-selector-item{
+  display:flex;
+  justify-content: space-between;
   padding:.5em;
   margin:.5em;
   font-size: 1em;

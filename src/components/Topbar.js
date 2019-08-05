@@ -49,14 +49,14 @@ export default function Topbar() {
           <>
             <div 
               className="topbar-button topbar-button-item"
-              title="New Project"
+              title="New Puzzle"
               onClick={onCreateNewPuzzle}
             >
               <FontAwesomeIcon icon={faPlusSquare} size="2x"/> 
             </div>
             <div 
               className="topbar-button topbar-button-item"
-              title="New Project"
+              title="Open Puzzle"
               onClick={onOpenPuzzleSelector}
             >
               <FontAwesomeIcon icon={faFolderOpen} size="2x"/> 

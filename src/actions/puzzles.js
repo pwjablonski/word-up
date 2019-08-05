@@ -1,7 +1,7 @@
 import { createAction } from "redux-actions";
 
 export const puzzleCreated = createAction("PUZZLE_CREATED", 
-    (puzzleKey) => ({puzzleKey})
+    (puzzleKey, user) => ({puzzleKey, user})
 );
 
 export const createPuzzle = createAction("CREATE_PUZZLE");

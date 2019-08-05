@@ -20,6 +20,7 @@ import isUserAuthenticated from "./isUserAuthenticated"
 import getCurrentUserId from "./getCurrentUserId"
 import getPuzzles from "./getPuzzles"
 import isPuzzleSelectorOpen from "./isPuzzleSelectorOpen"
+import getCurrentUser from "./getCurrentUser"
 
 export {
   getCurrentCharacter,
@@ -43,5 +44,6 @@ export {
   isUserAuthenticated,
   getCurrentUserId,
   getPuzzles,
-  isPuzzleSelectorOpen
+  isPuzzleSelectorOpen,
+  getCurrentUser
 };
