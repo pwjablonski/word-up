@@ -366,7 +366,7 @@ body {
   max-width: 500px;
   min-width: 300px;
   outline: none;
-  padding: 5%;
+  padding: 2% 2% 2% 2%;
   pointer-events: visible;
   position: relative;
   z-index: 2;
@@ -388,4 +388,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: center
+}
+
+/* Puzzle Selector */
+.puzzle-selector{
+  height:10em;
+  overflow-y: scroll;
+  text-align: left;
+  margin-bottom:2em;
+  width: 100%
+}
+
+.puzzle-selector-item{
+  padding:.5em;
+  margin:.5em;
+  font-size: 1em;
+  cursor: pointer;
+  border-bottom: 1px solid #e6e6e6
+}
+
+.puzzle-selector-item:hover{
+  background-color: #e6e6e6
 }

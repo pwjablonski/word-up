@@ -17,6 +17,9 @@ import isWordSelectorOpen from "./isWordSelectorOpen"
 import getWords from "./getWords"
 import isSymmetryEnabled from "./isSymmetryEnabled"
 import isUserAuthenticated from "./isUserAuthenticated"
+import getCurrentUserId from "./getCurrentUserId"
+import getPuzzles from "./getPuzzles"
+import isPuzzleSelectorOpen from "./isPuzzleSelectorOpen"
 
 export {
   getCurrentCharacter,
@@ -37,5 +40,8 @@ export {
   isWordSelectorOpen,
   getWords,
   isSymmetryEnabled,
-  isUserAuthenticated
+  isUserAuthenticated,
+  getCurrentUserId,
+  getPuzzles,
+  isPuzzleSelectorOpen
 };

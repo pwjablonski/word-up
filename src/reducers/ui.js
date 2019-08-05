@@ -8,7 +8,10 @@ import {
   toggleTopBarMenu,
   closeTopBarMenu,
   toggleWordSelector,
-  toggleSymmetry
+  toggleSymmetry,
+  openPuzzleSelector,
+  closePuzzleSelector,
+  changeCurrentPuzzle
 } from "../actions";
 
 const initialState = {
@@ -19,6 +22,7 @@ const initialState = {
   openTopBarMenu: null,
   wordSelectorIsOpen: false,
   symmetryIsEnabled: false,
+  puzzleSelectorIsOpen: false,
 };
 
 /* eslint-disable no-param-reassign */
@@ -58,6 +62,18 @@ export default handleActions(
     [toggleSymmetry]: (state) =>
       produce(state, draft => {
         draft.symmetryIsEnabled = !draft.symmetryIsEnabled;
+      }),
+    [openPuzzleSelector]: (state) =>
+      produce(state, draft => {
+        draft.puzzleSelectorIsOpen = true;
+      }),
+    [closePuzzleSelector]: (state) =>
+      produce(state, draft => {
+        draft.puzzleSelectorIsOpen = false;
+      }),
+    [changeCurrentPuzzle]: (state) =>
+      produce(state, draft => {
+        draft.puzzleSelectorIsOpen = false;
       }),
   },
   initialState

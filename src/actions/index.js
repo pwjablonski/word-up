@@ -12,7 +12,9 @@ import {
   toggleTopBarMenu,
   closeTopBarMenu,
   toggleWordSelector,
-  toggleSymmetry
+  toggleSymmetry,
+  openPuzzleSelector,
+  closePuzzleSelector
 } from "./ui";
 
 import { 
@@ -26,6 +28,9 @@ import {
   titleChanged,
   createPDF,
   generatePattern,
+  saveCurrentPuzzle,
+  puzzlesLoaded,
+  changeCurrentPuzzle
 } from "./puzzles";
 
 import { 
@@ -72,4 +77,9 @@ export {
   userAuthenticated,
   logOut,
   userLoggedOut,
+  saveCurrentPuzzle,
+  puzzlesLoaded,
+  openPuzzleSelector,
+  closePuzzleSelector,
+  changeCurrentPuzzle
 };

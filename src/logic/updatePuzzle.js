@@ -1,6 +1,7 @@
 import { createLogic } from "redux-logic";
 import {
   gridUpdated,
+  saveCurrentPuzzle
 } from "../actions"
 import {
   getCurrentPuzzle,
@@ -37,7 +38,7 @@ export default createLogic({
     const newClues = updateClues(newGrid, currentPuzzle.clues);
  
     await dispatch(gridUpdated(currentPuzzleKey, newGrid, newClues));
-
+    dispatch(saveCurrentPuzzle());
     done();
   }
 });

@@ -71,3 +71,20 @@ export function getSessionUid() {
 export async function signOut() {
   return auth.signOut();
 }
+
+export async function savePuzzle(uid, puzzle) {
+  const database = await loadDatabase();
+  return database.doc(`workspaces/${uid}/puzzles/${puzzle.puzzleKey}`).set(
+    puzzle
+  );
+}
+
+export async function loadAllProjects(uid) {
+  const database = await loadDatabase();
+  let querySnapshot = await database.collection(`workspaces/${uid}/puzzles`).get();
+  let puzzles = {}
+  querySnapshot.forEach(function(doc) {
+    puzzles[doc.id] =  doc.data();
+  });
+  return puzzles;
+}

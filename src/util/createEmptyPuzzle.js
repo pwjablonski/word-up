@@ -1,6 +1,7 @@
 export default function createEmptyPuzzle(puzzleKey, cols, rows) {
     let puzzle = {};
     puzzle.puzzleKey = puzzleKey
+    puzzle.updatedAt = null
     puzzle.title = "Untitled"
     puzzle.author = "No Author"
     puzzle.size = {

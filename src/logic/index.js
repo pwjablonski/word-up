@@ -12,6 +12,8 @@ import manageAuth from "./manageAuth"
 import handleAuthChange from "./handleAuthChange"
 import logIn from "./logIn"
 import logOut from "./logOut"
+import saveCurrentPuzzle from "./saveCurrentPuzzle"
+import userAuthenticated from "./userAuthenticated"
 
 
 export default [
@@ -29,4 +31,6 @@ export default [
   handleAuthChange,
   logIn,
   logOut,
+  saveCurrentPuzzle,
+  userAuthenticated
 ];

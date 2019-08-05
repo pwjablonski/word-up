@@ -48,3 +48,11 @@ export const toggleWordSelector = createAction(
 export const toggleSymmetry = createAction(
   "TOGGLE_SYMMETRY",
 );
+
+export const openPuzzleSelector = createAction(
+  "OPEN_PUZZLE_SELECTOR",
+);
+
+export const closePuzzleSelector = createAction(
+  "CLOSE_PUZZLE_SELECTOR",
+);

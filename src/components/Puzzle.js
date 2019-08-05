@@ -8,6 +8,7 @@ import { getCurrentPuzzle } from "../selectors";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import isNull from 'lodash/isNull'
+import PuzzleSelector from "../components/PuzzleSelector"
 
 export default function Puzzle() {
   const currentPuzzle = useSelector(getCurrentPuzzle);
@@ -24,6 +25,7 @@ export default function Puzzle() {
     <div className="puzzle">
       <Topbar />
       <PuzzleLayout />
+      <PuzzleSelector />
     </div>
   );
 }
