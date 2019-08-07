@@ -388,7 +388,6 @@ body {
   pointer-events: visible;
   position: relative;
   z-index: 2;
-  font-family: franklin;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -421,10 +420,10 @@ body {
   display:flex;
   justify-content: space-between;
   padding:.5em;
-  margin:.5em;
   font-size: 1em;
   cursor: pointer;
-  border-bottom: 1px solid #e6e6e6
+  border: 0;
+  width: 100%;
 }
 
 .puzzle-selector-item:hover{

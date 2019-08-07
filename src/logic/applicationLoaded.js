@@ -3,7 +3,7 @@ import { createPuzzle, updateUI } from "../actions";
 
 export default createLogic({
   type: "APPLICATION_LOADED",
-  async process({ action }, dispatch, done) {
+  async process(deps, dispatch, done) {
     dispatch(createPuzzle());
     dispatch(updateUI(0, "across"));
     done();

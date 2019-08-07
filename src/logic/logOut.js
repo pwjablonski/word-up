@@ -3,7 +3,7 @@ import { signOut } from "../clients/firebase";
 
 export default createLogic({
   type: "LOG_OUT",
-  async process({ action }, dispatch, done) {
+  async process(deps, dispatch, done) {
     signOut();
     done();
   }

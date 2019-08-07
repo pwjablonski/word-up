@@ -49,6 +49,7 @@ export default function Cell({
 }
 
 Cell.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   cellData: PropTypes.object.isRequired,
   isHighlighted: PropTypes.bool.isRequired,
   isSelected: PropTypes.bool.isRequired,

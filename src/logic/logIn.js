@@ -3,11 +3,11 @@ import { signIn } from "../clients/firebase";
 
 export default createLogic({
   type: "LOG_IN",
-  async process({ action }, dispatch, done) {
+  async process(deps, dispatch, done) {
     try {
-      signIn(action.payload.provider);
+      signIn();
     } catch (e) {
-      console.log(e);
+      // console.log(e);
     }
     done();
   }

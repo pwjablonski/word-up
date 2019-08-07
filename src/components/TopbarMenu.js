@@ -1,4 +1,3 @@
-/* eslint-disable react/no-multi-comp */
 import React from "react";
 import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
@@ -16,6 +15,7 @@ export default function TopbarMenu({ children, name }) {
 }
 
 TopbarMenu.propTypes = {
-  // children: PropTypes.array.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  children: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired
 };

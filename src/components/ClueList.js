@@ -57,6 +57,7 @@ export default function ClueList({ clues, direction }) {
 }
 
 ClueList.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   clues: PropTypes.array.isRequired,
   direction: PropTypes.string.isRequired
 };

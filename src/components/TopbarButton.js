@@ -30,6 +30,7 @@ export default function TopbarButton({ name, children }) {
 }
 
 TopbarButton.propTypes = {
-  // children: PropTypes.object.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  children: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired
 };

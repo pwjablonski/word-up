@@ -41,7 +41,7 @@ import {
   handleAuthChange,
   userAuthenticated,
   logOut,
-  userLoggedOut,
+  userLoggedOut
 } from "./user";
 
 export {
@@ -80,5 +80,5 @@ export {
   openPuzzleSelector,
   closePuzzleSelector,
   changeCurrentPuzzle,
-  closeWordSelector,
+  closeWordSelector
 };

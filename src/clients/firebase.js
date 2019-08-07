@@ -38,7 +38,7 @@ async function signInWithGoogle() {
   return auth.signInWithPopup(googleAuthProvider);
 }
 
-export async function signIn(provider) {
+export async function signIn() {
   const originalOnerror = window.onerror;
   window.onerror = message => message.toLowerCase().includes("network error");
   try {
