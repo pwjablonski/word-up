@@ -1,3 +1,3 @@
 export default function isPristineProject(puzzle) {
-    return !puzzle['updatedAt'];
+  return !puzzle.updatedAt;
 }

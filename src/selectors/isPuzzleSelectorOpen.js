@@ -1,4 +1,3 @@
 export default function isPuzzleSelectorOpen(state) {
-    return state.ui.puzzleSelectorIsOpen;
+  return state.ui.puzzleSelectorIsOpen;
 }
-  

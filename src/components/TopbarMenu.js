@@ -1,42 +1,21 @@
 /* eslint-disable react/no-multi-comp */
-import React, {useRef} from 'react';
-import { useDispatch, useSelector } from "react-redux";
-import {getOpenTopBarMenu} from '../selectors';
-import classnames from "classnames";
+import React from "react";
+import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
 
-import {
-  toggleTopBarMenu,
-  // closeTopBarMenu
-} from '../actions';
-// import useOutsideClick from "../customHooks/useOutsideClick";
+import { getOpenTopBarMenu } from "../selectors";
 
+export default function TopbarMenu({ children, name }) {
+  const isOpen = useSelector(getOpenTopBarMenu) === name;
 
-export default function TopbarMenu({
-  name,
-  children,
-}) {
-    const dispatch = useDispatch();
-    const ref = useRef();
-    const isOpen = useSelector(getOpenTopBarMenu) === name;
-    // useOutsideClick(ref, () => {
-    //   dispatch(closeTopBarMenu());
-    // });
+  if (!isOpen) {
+    return null;
+  }
 
-    function onToggle() {
-        dispatch(toggleTopBarMenu(name));
-    }
-
-    return(
-      <div 
-        className={classnames(
-          "topbar-button",
-          "topbar-button-item",
-          {"topbar-button-item-active": isOpen}
-        )}
-        onClick={onToggle}
-        ref={ref}
-      >
-          {children}
-      </div>
-    )
+  return <div className="topbar-menu">{children}</div>;
 }
+
+TopbarMenu.propTypes = {
+  // children: PropTypes.array.isRequired,
+  name: PropTypes.string.isRequired
+};

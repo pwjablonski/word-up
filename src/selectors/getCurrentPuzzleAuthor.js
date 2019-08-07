@@ -1,9 +1,9 @@
-import getCurrentPuzzle from './getCurrentPuzzle'
+import getCurrentPuzzle from "./getCurrentPuzzle";
 
 export default function getCurrentPuzzleAuthor(state) {
   const currentPuzzle = getCurrentPuzzle(state);
-  if(currentPuzzle) {
+  if (currentPuzzle) {
     return currentPuzzle.author;
   }
-  return null
+  return null;
 }

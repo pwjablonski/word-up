@@ -1,12 +1,6 @@
 import { createLogic } from "redux-logic";
-import {
-  updateUI
-} from "../actions";
-import {
-  getCurrentCell,
-  getCurrentDirection
-} from "../selectors";
-
+import { updateUI } from "../actions";
+import { getCurrentCell, getCurrentDirection } from "../selectors";
 
 export default createLogic({
   type: "CELL_SELECTED",

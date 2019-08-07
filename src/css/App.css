@@ -4,6 +4,10 @@ ol, ul {
   padding-inline-start:0;
 }
 
+button {
+  padding:0;
+}
+
 body {
   margin: 0;
 }
@@ -114,7 +118,7 @@ body {
   margin-right: 1em;
 }
 
-.topbar-button {
+.topbar-item {
   background-color: transparent;
   border: none;
   border-radius: 0;
@@ -123,22 +127,18 @@ body {
   height: 45px;
   outline: none;
   text-transform: capitalize;
-  padding:5px;
   display:flex;
   align-items:center;
   justify-content:center;
   position: relative;
+
 }
 
-
-.topbar-button-item {
+.topbar-button {
   color: #4f85e5;
-  width: 50px
-}
-
-.topbar-button-text{
-  color: #959595;
-  width: 90px;
+  width: 5em;
+  height: 100%;
+  border: 0;
 }
 
 .topbar-button:hover{
@@ -146,15 +146,11 @@ body {
   background-color: #e6e6e6;
 }
 
-.timer-button:hover {
-  background-color: transparent;
-}
-
 /* Topbar Menu */
 .topbar-menu{
   border: 1px solid #e6e6e6;
   position: absolute;
-  top: 55px;
+  top: 45px;
   right:0px;
   display: flex;
   flex-direction: column;
@@ -186,13 +182,14 @@ body {
   background-color: #e6e6e6;
 }
 
-.topbar-button-item-active{
+.topbar-button-active{
   background-color: #e6e6e6;
 }
 
-.topbar-button-item-active:hover{
+.topbar-button-active:hover{
   color: #000;
 }
+
 /* Puzzle Header */
 
 .puzzle-header {
@@ -314,8 +311,20 @@ body {
 .clue {
   border-left: 10px solid transparent;
   cursor: pointer;
-  display: flex;
-  padding: 5px 1px;
+  padding: 1px;
+    font:inherit;
+    box-sizing: border-box;
+    color: #444;
+    display: flex;
+    align-items: center;
+    /* font-weight: 400;
+    font-size: .8em; */
+    /* line-height: 1.2em; */
+    min-width: 100%;
+    padding: 1em .5em;
+    text-decoration: none;
+    white-space: nowrap;
+    border:none;
 }
 
 .clue-label {

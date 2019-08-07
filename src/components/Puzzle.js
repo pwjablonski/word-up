@@ -1,14 +1,13 @@
 import React from "react";
 import "../css/App.css";
-import PropTypes from "prop-types";
-import Topbar from './Topbar';
 import { useSelector } from "react-redux";
-import PuzzleLayout from "./PuzzleLayout";
-import { getCurrentPuzzle } from "../selectors";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import isNull from 'lodash/isNull'
-import PuzzleSelector from "../components/PuzzleSelector"
+import isNull from "lodash/isNull";
+import { getCurrentPuzzle } from "../selectors";
+import PuzzleLayout from "./PuzzleLayout";
+import Topbar from "./Topbar";
+import PuzzleSelector from "./PuzzleSelector";
 
 export default function Puzzle() {
   const currentPuzzle = useSelector(getCurrentPuzzle);
@@ -29,7 +28,3 @@ export default function Puzzle() {
     </div>
   );
 }
-
-Puzzle.propTypes = {
-  match: PropTypes.object.isRequired
-};

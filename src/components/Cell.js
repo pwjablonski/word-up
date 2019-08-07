@@ -9,8 +9,7 @@ export default function Cell({
   isSelected,
   onCellSelected
 }) {
-  
-  const { index, fill, clueNum } = cellData
+  const { index, fill, clueNum } = cellData;
   const xOffset = 33 * (index % 15);
   const yOffset = 33 * Math.floor(index / 15);
   const isBlack = fill === ".";
@@ -51,5 +50,7 @@ export default function Cell({
 
 Cell.propTypes = {
   cellData: PropTypes.object.isRequired,
+  isHighlighted: PropTypes.bool.isRequired,
+  isSelected: PropTypes.bool.isRequired,
   onCellSelected: PropTypes.func.isRequired
 };

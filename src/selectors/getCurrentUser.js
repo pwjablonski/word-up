@@ -1,3 +1,3 @@
 export default function getCurrentUser(state) {
-    return state.user.account;
+  return state.user.account;
 }

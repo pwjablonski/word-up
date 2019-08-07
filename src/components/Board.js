@@ -5,7 +5,9 @@ import Cell from "./Cell";
 import { cellSelected, keyInputted } from "../actions";
 
 import {
-  getCurrentPuzzleGrid, getCurrentCell, getHighlightedCells
+  getCurrentPuzzleGrid,
+  getCurrentCell,
+  getHighlightedCells
 } from "../selectors";
 
 export default function Board() {
@@ -29,14 +31,14 @@ export default function Board() {
       viewBox="0 0 500 500"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMin meet"
-      tabIndex={1}
+      tabIndex={0}
       onKeyDown={onInput}
     >
       <g className="cells">
-        {grid.map((cellData) => {
+        {grid.map(cellData => {
           const isSelected = currentCell === cellData.index;
-          const isHighlighted= highlightedCells.includes(cellData.index);
- 
+          const isHighlighted = highlightedCells.includes(cellData.index);
+
           return (
             <Cell
               cellData={cellData}

@@ -1,3 +1,3 @@
 export default function getCurrentPuzzleKey(state) {
-    return state.currentPuzzle.puzzleKey;
+  return state.currentPuzzle.puzzleKey;
 }

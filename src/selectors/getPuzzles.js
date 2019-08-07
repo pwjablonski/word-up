@@ -1,4 +1,3 @@
 export default function getPuzzles(state) {
-    return state.puzzles;
+  return state.puzzles;
 }
-  

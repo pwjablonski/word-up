@@ -1,9 +1,9 @@
-import getCurrentPuzzle from './getCurrentPuzzle'
+import getCurrentPuzzle from "./getCurrentPuzzle";
 
 export default function getClueLists(state) {
   const currentPuzzle = getCurrentPuzzle(state);
-  if(currentPuzzle) {
+  if (currentPuzzle) {
     return currentPuzzle.clues;
   }
-  return null
+  return null;
 }

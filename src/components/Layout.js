@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import "../css/App.css";
 import { Route } from "react-router-dom";
-import Puzzle from "./Puzzle";
 import { useDispatch } from "react-redux";
+import Puzzle from "./Puzzle";
 import { applicationLoaded } from "../actions";
-
 
 export default function Layout() {
   const dispatch = useDispatch();

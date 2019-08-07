@@ -3,11 +3,13 @@ import "../css/App.css";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
+import ContentEditable from "react-contenteditable";
 import { clueListItemClicked, clueTextChanged } from "../actions";
-import ContentEditable from 'react-contenteditable'
-import { getCurrentPuzzleKey } from "../selectors";
-
-import { getCurrentClueNum, getCurrentDirection } from "../selectors";
+import {
+  getCurrentPuzzleKey,
+  getCurrentClueNum,
+  getCurrentDirection
+} from "../selectors";
 
 export default function ClueList({ clues, direction }) {
   const dispatch = useDispatch();
@@ -19,38 +21,34 @@ export default function ClueList({ clues, direction }) {
     dispatch(clueListItemClicked(clueNum, direction));
   }
 
-  function handleChange(e, i){
-    dispatch(clueTextChanged(
-      currentPuzzleKey,
-      direction,
-      i,
-      e.target.value
-    ))
+  function handleChange(e, i) {
+    dispatch(clueTextChanged(currentPuzzleKey, direction, i, e.target.value));
   }
   return (
     <div className="cluelist">
       <h3 className="cluelist-title">{direction}</h3>
       <ol className="cluelist-list">
-        {clues.map(function(clue, i) {
+        {clues.map((clue, i) => {
           return (
-            <li
+            <button
               className={classnames("clue", {
                 "clue-selected":
                   currentClueNum === clue.clueNum &&
                   currentDirection === direction
               })}
               key={clue.clueNum}
+              type="button"
               onClick={() => onClueListItemClicked(clue.clueNum)}
             >
               <div className="clue-text">
                 <span>{clue.clueNum}. </span>
                 <ContentEditable
                   html={clue.text}
-                  onChange={(e)=>handleChange(e, i)}
-                  tagName='span'
+                  onChange={e => handleChange(e, i)}
+                  tagName="span"
                 />
               </div>
-            </li>
+            </button>
           );
         })}
       </ol>

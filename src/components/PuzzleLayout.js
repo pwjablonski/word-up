@@ -13,7 +13,7 @@ export default function PuzzleLayout() {
   return (
     <div className="layout">
       <div className="layout-left">
-        <PuzzleHeader/>
+        <PuzzleHeader />
         <Board />
       </div>
       <div className="layout-right">
@@ -21,7 +21,7 @@ export default function PuzzleLayout() {
         <div className="cluelists">
           <ClueList clues={clues.across} direction="across" />
           <ClueList clues={clues.down} direction="down" />
-        </div> 
+        </div>
       </div>
     </div>
   );

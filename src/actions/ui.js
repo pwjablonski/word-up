@@ -27,36 +27,23 @@ export const clueListItemClicked = createAction(
   (clueNum, direction) => ({ clueNum, direction })
 );
 
-export const updateUI = createAction(
-  "UPDATE_UI",
-  (nextCell, direction) => ({nextCell, direction})
-);
+export const updateUI = createAction("UPDATE_UI", (nextCell, direction) => ({
+  nextCell,
+  direction
+}));
 
-export const toggleTopBarMenu = createAction(
-  "TOGGLE_TOP_BAR_MENU",
-  (name) => ({name})
-);
+export const toggleTopBarMenu = createAction("TOGGLE_TOP_BAR_MENU", name => ({
+  name
+}));
 
-export const closeTopBarMenu = createAction(
-  "CLOSE_TOP_BAR_MENU",
-);
+export const closeTopBarMenu = createAction("CLOSE_TOP_BAR_MENU");
 
-export const openWordSelector = createAction(
-  "OPEN_WORD_SELECTOR",
-);
+export const openWordSelector = createAction("OPEN_WORD_SELECTOR");
 
-export const closeWordSelector = createAction(
-  "CLOSE_WORD_SELECTOR",
-);
+export const closeWordSelector = createAction("CLOSE_WORD_SELECTOR");
 
-export const toggleSymmetry = createAction(
-  "TOGGLE_SYMMETRY",
-);
+export const toggleSymmetry = createAction("TOGGLE_SYMMETRY");
 
-export const openPuzzleSelector = createAction(
-  "OPEN_PUZZLE_SELECTOR",
-);
+export const openPuzzleSelector = createAction("OPEN_PUZZLE_SELECTOR");
 
-export const closePuzzleSelector = createAction(
-  "CLOSE_PUZZLE_SELECTOR",
-);
+export const closePuzzleSelector = createAction("CLOSE_PUZZLE_SELECTOR");

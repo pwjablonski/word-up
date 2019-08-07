@@ -1,3 +1,3 @@
 export default function getCurrentUserId(state) {
-    return state.user.account.id;
+  return state.user.account.id;
 }

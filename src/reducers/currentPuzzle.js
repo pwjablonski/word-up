@@ -16,8 +16,7 @@ export default handleActions(
     [changeCurrentPuzzle]: (state, { payload: { puzzleKey } }) =>
       produce(state, draft => {
         draft.puzzleKey = puzzleKey;
-      }),
+      })
   },
   initialState
 );
-

@@ -23,7 +23,7 @@ const initialState = {
   openTopBarMenu: null,
   wordSelectorIsOpen: false,
   symmetryIsEnabled: false,
-  puzzleSelectorIsOpen: false,
+  puzzleSelectorIsOpen: false
 };
 
 /* eslint-disable no-param-reassign */
@@ -50,36 +50,36 @@ export default handleActions(
       }),
     [toggleTopBarMenu]: (state, { payload: { name } }) =>
       produce(state, draft => {
-        draft.openTopBarMenu = name === draft.openTopBarMenu ? null: name;
+        draft.openTopBarMenu = name === draft.openTopBarMenu ? null : name;
       }),
-    [closeTopBarMenu]: (state) =>
+    [closeTopBarMenu]: state =>
       produce(state, draft => {
         draft.openTopBarMenu = null;
       }),
-    [toggleSymmetry]: (state) =>
+    [toggleSymmetry]: state =>
       produce(state, draft => {
         draft.symmetryIsEnabled = !draft.symmetryIsEnabled;
       }),
-    [openPuzzleSelector]: (state) =>
+    [openPuzzleSelector]: state =>
       produce(state, draft => {
         draft.puzzleSelectorIsOpen = true;
       }),
-    [closePuzzleSelector]: (state) =>
+    [closePuzzleSelector]: state =>
       produce(state, draft => {
         draft.puzzleSelectorIsOpen = false;
       }),
-    [changeCurrentPuzzle]: (state) =>
+    [changeCurrentPuzzle]: state =>
       produce(state, draft => {
         draft.puzzleSelectorIsOpen = false;
       }),
-    [closeWordSelector]: (state) =>
+    [closeWordSelector]: state =>
       produce(state, draft => {
         draft.wordSelectorIsOpen = false;
       }),
-    [wordsLoaded]: (state) =>
+    [wordsLoaded]: state =>
       produce(state, draft => {
         draft.wordSelectorIsOpen = true;
-      }),
+      })
   },
   initialState
 );

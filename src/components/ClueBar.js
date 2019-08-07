@@ -1,11 +1,11 @@
 import React from "react";
 import "../css/App.css";
 import { useSelector, useDispatch } from "react-redux";
+import { faSearch, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import WordSelector from "./WordSelector";
-import {faSearch} from '@fortawesome/free-solid-svg-icons';
-import {faChevronUp} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {searchWord, closeWordSelector} from '../actions'
+import { searchWord, closeWordSelector } from "../actions";
 
 import {
   getCurrentClueNum,
@@ -24,15 +24,15 @@ export default function ClueBar() {
   let num;
   if (clueNum) {
     const letter = currentDirection === "across" ? "A" : "D";
-    num = `${clueNum}${letter}`
+    num = `${clueNum}${letter}`;
   }
 
-  function onSearchWord(){
-    dispatch(searchWord())
+  function onSearchWord() {
+    dispatch(searchWord());
   }
 
-  function onCloseWordSelector(){
-    dispatch(closeWordSelector())
+  function onCloseWordSelector() {
+    dispatch(closeWordSelector());
   }
 
   return (
@@ -42,21 +42,21 @@ export default function ClueBar() {
           <div className="cluebar-number">{num}</div>
           <div className="cluebar-fill">{letters}</div>
         </div>
-        {
-          wordSelectorIsOpen ? 
-            <FontAwesomeIcon
+        {wordSelectorIsOpen ? (
+          <FontAwesomeIcon
             onClick={onCloseWordSelector}
             className="cluebar-arrow"
             icon={faChevronUp}
-            /> :
-            <FontAwesomeIcon
-              onClick={onSearchWord}
-              className="cluebar-arrow"
-              icon={faSearch}
-            /> 
-        }
+          />
+        ) : (
+          <FontAwesomeIcon
+            onClick={onSearchWord}
+            className="cluebar-arrow"
+            icon={faSearch}
+          />
+        )}
       </div>
-      <WordSelector/> 
+      <WordSelector />
     </div>
   );
 }

@@ -11,16 +11,16 @@ import getCurrentPuzzleKey from "./getCurrentPuzzleKey";
 import getCurrentPuzzle from "./getCurrentPuzzle";
 import getCurrentClueNum from "./getCurrentClueNum";
 import getCurrentClueText from "./getCurrentClueText";
-import getHighlightedLetters from "./getHighlightedLetters"
-import getOpenTopBarMenu from "./getOpenTopBarMenu"
-import isWordSelectorOpen from "./isWordSelectorOpen"
-import getWords from "./getWords"
-import isSymmetryEnabled from "./isSymmetryEnabled"
-import isUserAuthenticated from "./isUserAuthenticated"
-import getCurrentUserId from "./getCurrentUserId"
-import getPuzzles from "./getPuzzles"
-import isPuzzleSelectorOpen from "./isPuzzleSelectorOpen"
-import getCurrentUser from "./getCurrentUser"
+import getHighlightedLetters from "./getHighlightedLetters";
+import getOpenTopBarMenu from "./getOpenTopBarMenu";
+import isWordSelectorOpen from "./isWordSelectorOpen";
+import getWords from "./getWords";
+import isSymmetryEnabled from "./isSymmetryEnabled";
+import isUserAuthenticated from "./isUserAuthenticated";
+import getCurrentUserId from "./getCurrentUserId";
+import getPuzzles from "./getPuzzles";
+import isPuzzleSelectorOpen from "./isPuzzleSelectorOpen";
+import getCurrentUser from "./getCurrentUser";
 
 export {
   getCurrentCharacter,

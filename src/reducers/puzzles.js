@@ -8,84 +8,101 @@ import {
   titleChanged,
   puzzlesLoaded,
   clueTextChanged,
-  userLoggedOut,
+  // userLoggedOut,
   changeCurrentPuzzle
 } from "../actions";
 
-import createEmptyPuzzle from "../util/createEmptyPuzzle"
-import isPristinePuzzle from "../util/isPristinePuzzle"
+import createEmptyPuzzle from "../util/createEmptyPuzzle";
+import isPristinePuzzle from "../util/isPristinePuzzle";
 
 const initialState = {};
 
 /* eslint-disable no-param-reassign */
 export default handleActions(
   {
-    [puzzleCreated]: (state, { payload: { puzzleKey, user} }) =>
+    [puzzleCreated]: (state, { payload: { puzzleKey, user } }) =>
       produce(state, draft => {
-        let puzzles ={}
-        Object.keys(state).forEach(function(key){
-          if(key === puzzleKey || !isPristinePuzzle(state[key])){
+        const puzzles = {};
+        Object.keys(state).forEach(key => {
+          if (key === puzzleKey || !isPristinePuzzle(state[key])) {
             puzzles[key] = state[key];
           }
         });
-        
+
         puzzles[puzzleKey] = createEmptyPuzzle(puzzleKey, 15, 15);
-        puzzles[puzzleKey]["author"] = "me"
+        puzzles[puzzleKey].author = "me";
         if (user.displayName) {
-          puzzles[puzzleKey]["author"] = user.displayName;
+          puzzles[puzzleKey].author = user.displayName;
         } else {
-          puzzles[puzzleKey]["author"] = "No Author"
+          puzzles[puzzleKey].author = "No Author";
         }
-        draft = puzzles
-        return puzzles
+        draft = puzzles;
+        return draft;
       }),
     [changeCurrentPuzzle]: (state, { payload: { puzzleKey } }) =>
       produce(state, draft => {
-        let puzzles ={}
-        Object.keys(state).forEach(function(key){
-          if(key === puzzleKey || !isPristinePuzzle(state[key])){
+        const puzzles = {};
+        Object.keys(state).forEach(key => {
+          if (key === puzzleKey || !isPristinePuzzle(state[key])) {
             puzzles[key] = state[key];
           }
         });
-        draft = puzzles
-        return puzzles
+        draft = puzzles;
+        return draft;
       }),
-    [updateCellFill]: (state, { payload: { currentPuzzleKey, cell, fill }, meta: {timestamp} }) =>
+    [updateCellFill]: (
+      state,
+      { payload: { currentPuzzleKey, cell, fill }, meta: { timestamp } }
+    ) =>
       produce(state, draft => {
-        draft[currentPuzzleKey]["grid"][cell]["fill"] = fill;
-        draft[currentPuzzleKey]["updatedAt"] = timestamp
+        draft[currentPuzzleKey].grid[cell].fill = fill;
+        draft[currentPuzzleKey].updatedAt = timestamp;
       }),
-    [gridUpdated]: (state, { payload: {currentPuzzleKey, grid, clues}, meta: {timestamp} }) =>
+    [gridUpdated]: (
+      state,
+      { payload: { currentPuzzleKey, grid, clues }, meta: { timestamp } }
+    ) =>
       produce(state, draft => {
-        draft[currentPuzzleKey]["grid"] = grid;
-        draft[currentPuzzleKey]["clues"] = clues;
-        draft[currentPuzzleKey]["updatedAt"] = timestamp
+        draft[currentPuzzleKey].grid = grid;
+        draft[currentPuzzleKey].clues = clues;
+        draft[currentPuzzleKey].updatedAt = timestamp;
       }),
-    [clueTextChanged]: (state, { payload: {currentPuzzleKey, direction, index, value}, meta: {timestamp} }) =>
+    [clueTextChanged]: (
+      state,
+      {
+        payload: { currentPuzzleKey, direction, index, value },
+        meta: { timestamp }
+      }
+    ) =>
       produce(state, draft => {
-        draft[currentPuzzleKey]["clues"][direction][index]["text"] = value;
-        draft[currentPuzzleKey]["updatedAt"] = timestamp
+        draft[currentPuzzleKey].clues[direction][index].text = value;
+        draft[currentPuzzleKey].updatedAt = timestamp;
       }),
-    [authorChanged]: (state, { payload: {currentPuzzleKey, value}, meta: {timestamp} }) =>
+    [authorChanged]: (
+      state,
+      { payload: { currentPuzzleKey, value }, meta: { timestamp } }
+    ) =>
       produce(state, draft => {
-        draft[currentPuzzleKey]["author"] = value;
-        draft[currentPuzzleKey]["updatedAt"] = timestamp
+        draft[currentPuzzleKey].author = value;
+        draft[currentPuzzleKey].updatedAt = timestamp;
       }),
-    [titleChanged]: (state, { payload: {currentPuzzleKey, value}, meta: {timestamp} }) =>
+    [titleChanged]: (
+      state,
+      { payload: { currentPuzzleKey, value }, meta: { timestamp } }
+    ) =>
       produce(state, draft => {
-        draft[currentPuzzleKey]["title"] = value;
-        draft[currentPuzzleKey]["updatedAt"] = timestamp
+        draft[currentPuzzleKey].title = value;
+        draft[currentPuzzleKey].updatedAt = timestamp;
       }),
-    [puzzlesLoaded]: (state, { payload: {puzzles} }) =>
+    [puzzlesLoaded]: (state, { payload: { puzzles } }) =>
       produce(state, draft => {
-        draft = {...state, ...puzzles};
-        return draft
-      }),
-    [userLoggedOut]: (state, action ) =>
-      produce(state, draft => {
-        // update
-      }),
-
+        draft = { ...state, ...puzzles };
+        return draft;
+      })
+    // [userLoggedOut]: (state, action) =>
+    //   produce(state, draft => {
+    //     // update
+    //   })
   },
   initialState
 );

@@ -1,8 +1,5 @@
 import { createLogic } from "redux-logic";
-import {
-  createPuzzle,
-  updateUI,
- } from '../actions'
+import { createPuzzle, updateUI } from "../actions";
 
 export default createLogic({
   type: "APPLICATION_LOADED",

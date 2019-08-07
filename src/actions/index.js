@@ -1,4 +1,4 @@
-import applicationLoaded from './applicationLoaded'
+import applicationLoaded from "./applicationLoaded";
 
 import {
   cellSelected,
@@ -18,7 +18,7 @@ import {
   closeWordSelector
 } from "./ui";
 
-import { 
+import {
   puzzleCreated,
   createPuzzle,
   updateCellFill,
@@ -34,10 +34,7 @@ import {
   changeCurrentPuzzle
 } from "./puzzles";
 
-import { 
-  searchWord,
-  wordsLoaded,
-} from "./words";
+import { searchWord, wordsLoaded } from "./words";
 
 import {
   logIn,
@@ -45,7 +42,7 @@ import {
   userAuthenticated,
   logOut,
   userLoggedOut,
-} from "./user"
+} from "./user";
 
 export {
   cellSelected,
@@ -83,5 +80,5 @@ export {
   openPuzzleSelector,
   closePuzzleSelector,
   changeCurrentPuzzle,
-  closeWordSelector
+  closeWordSelector,
 };
