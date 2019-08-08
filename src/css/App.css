@@ -275,6 +275,12 @@ body {
   width: 33%;
 }
 
+@media (max-width: 960px){
+  .word-selector-word {
+    width: 50%;
+  }
+}
+
 /* Clue List */
 .cluelists {
   display: flex;
