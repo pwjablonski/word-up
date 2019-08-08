@@ -22,9 +22,12 @@ function getWordAtIndex(grid, index, direction) {
   return word;
 }
 
-export default function drawPDFGrid(currentPuzzle) {
+export default function getCluesAndAnswers(currentPuzzle) {
   const { across } = currentPuzzle.clues;
   const { down } = currentPuzzle.clues;
+
+  const newAcross = [];
+  const newDown = [];
 
   let acrossClueIndex = 0;
   let downClueIndex = 0;
@@ -32,8 +35,12 @@ export default function drawPDFGrid(currentPuzzle) {
   for (let i = 0; i < currentPuzzle.grid.length; i += 1) {
     if (acrossClueIndex < across.length) {
       if (currentPuzzle.grid[i].clueNum === across[acrossClueIndex].clueNum) {
-        const word = getWordAtIndex(currentPuzzle.grid, i, "across");
-        across[acrossClueIndex].answer = word;
+        const newClue = {
+          text: across[acrossClueIndex].text,
+          clueNum: across[acrossClueIndex].clueNum,
+          answer: getWordAtIndex(currentPuzzle.grid, i, "across")
+        };
+        newAcross.push(newClue);
         acrossClueIndex += 1;
       }
     }
@@ -42,11 +49,15 @@ export default function drawPDFGrid(currentPuzzle) {
   for (let i = 0; i < currentPuzzle.grid.length; i += 1) {
     if (downClueIndex < down.length) {
       if (currentPuzzle.grid[i].clueNum === down[downClueIndex].clueNum) {
-        const word = getWordAtIndex(currentPuzzle.grid, i, "down");
-        down[downClueIndex].answer = word;
+        const newClue = {
+          text: down[downClueIndex].text,
+          clueNum: down[downClueIndex].clueNum,
+          answer: getWordAtIndex(currentPuzzle.grid, i, "down")
+        };
+        newDown.push(newClue);
         downClueIndex += 1;
       }
     }
   }
-  return { across, down };
+  return { newAcross, newDown };
 }

@@ -18,7 +18,7 @@ export default createLogic({
     doc = drawPDFGrid(doc, currentPuzzle, true);
     doc.addPage();
 
-    const { across, down } = getCluesAndAnswers(currentPuzzle);
+    const { newAcross, newDown } = getCluesAndAnswers(currentPuzzle);
 
     doc.autoTableSetDefaults({
       headStyles: {
@@ -43,7 +43,7 @@ export default createLogic({
         { title: "", dataKey: "text" },
         { title: "", dataKey: "answer" }
       ],
-      across
+      newAcross
     );
     doc.autoTable(
       [
@@ -51,7 +51,7 @@ export default createLogic({
         { title: "", dataKey: "text" },
         { title: "", dataKey: "answer" }
       ],
-      down
+      newDown
     );
 
     doc.setFontSize(9);
