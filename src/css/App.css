@@ -165,7 +165,7 @@ body {
     box-sizing: border-box;
     color: #444;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     font-weight: 400;
     font-size: .8em;
@@ -176,9 +176,14 @@ body {
     text-decoration: none;
     white-space: nowrap;
     border:none;
+    padding: 0 1em;
 }
 
 .topbar-menu-item:hover {
+  background-color: #e6e6e6;
+}
+
+.topbar-menu-item-active {
   background-color: #e6e6e6;
 }
 

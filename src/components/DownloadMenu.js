@@ -25,8 +25,8 @@ export default function DownloadMenu() {
           type="button"
           onClick={onCreatePDF}
         >
-          <FontAwesomeIcon icon={faNewspaper} size="2x" />
           <span>NYTimes</span>
+          <FontAwesomeIcon icon={faNewspaper} size="2x" />
         </button>
       </TopbarMenu>
     </div>
