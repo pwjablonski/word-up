@@ -324,17 +324,14 @@ body {
 .clue {
   border-left: 10px solid transparent;
   cursor: pointer;
-  padding: 1px;
+  padding: .5em .5em;
     font:inherit;
     box-sizing: border-box;
     color: #444;
     display: flex;
     align-items: center;
-    /* font-weight: 400;
-    font-size: .8em; */
-    /* line-height: 1.2em; */
+    line-height: 1.2em;
     min-width: 100%;
-    padding: 1em .5em;
     text-decoration: none;
     white-space: nowrap;
     border:none;
