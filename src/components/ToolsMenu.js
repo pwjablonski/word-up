@@ -37,7 +37,7 @@ export default function ToolsMenu() {
           type="button"
           onClick={onToggleSymmetry}
         >
-          <span> Symmetry </span>
+          <span> Symmetry {symmetryIsEnabled ? "On" : "Off"}</span>
           <FontAwesomeIcon icon={faYinYang} size="2x" />
         </button>
         <button

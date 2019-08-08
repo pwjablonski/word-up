@@ -35,6 +35,10 @@ body {
   fill:#ffda00;
 }
 
+.cell-black-selected {
+  fill:#8b770f;
+}
+
 /* Layout */
 .layout {
   width:100%;

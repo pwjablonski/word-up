@@ -25,7 +25,8 @@ export default function Cell({
           "cell",
           { "cell-selected": isSelected },
           { "cell-black": isBlack },
-          { "cell-highlighted": isHighlighted }
+          { "cell-highlighted": isHighlighted },
+          { "cell-black-selected": isBlack && isSelected }
         )}
       />
       <text
@@ -42,7 +43,7 @@ export default function Cell({
         textAnchor="middle"
         fontSize={22 - fill.length * 2.5}
       >
-        {fill}
+        {fill !== "." ? fill : null}
       </text>
     </g>
   );
