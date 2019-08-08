@@ -3,7 +3,7 @@
 ## About
 Word Up allows you to create crossword puzzles! Go to https://word-up-dev.web.app/ to play!
 
-Happy Constructing!!
+Happy Constructing!!!
 
 
 ## Want to contribute?
