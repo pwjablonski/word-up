@@ -109,6 +109,9 @@ body {
   font-size: 2em;
 }
 
+.topbar-wordmark {
+  height: 30px
+}
 
 .topbar-tools {
   align-items: center;
