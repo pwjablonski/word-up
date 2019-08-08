@@ -305,6 +305,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-y: scroll;
+  scroll-behavior: smooth;
   height: calc(100% - 40px);
 }
 
@@ -339,6 +340,10 @@ body {
   line-height: 1.4;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.clue-text-cluenum{
+  font-weight: bold;
 }
 
 .clue-selected {

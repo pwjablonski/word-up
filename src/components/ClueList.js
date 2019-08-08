@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "../css/App.css";
 import PropTypes from "prop-types";
 import classnames from "classnames";
@@ -13,6 +13,7 @@ import {
 
 export default function ClueList({ clues, direction }) {
   const dispatch = useDispatch();
+  const ref = useRef();
   const currentPuzzleKey = useSelector(getCurrentPuzzleKey);
   const currentClueNum = useSelector(getCurrentClueNum);
   const currentDirection = useSelector(getCurrentDirection);
@@ -24,24 +25,33 @@ export default function ClueList({ clues, direction }) {
   function handleChange(e, i) {
     dispatch(clueTextChanged(currentPuzzleKey, direction, i, e.target.value));
   }
+
+  useEffect(() => {
+    if (ref.current) {
+      document.querySelector(`.cluelist-list.${direction}`).scrollTop =
+        ref.current.offsetTop - ref.current.parentElement.offsetTop;
+    }
+  });
+
   return (
     <div className="cluelist">
       <h3 className="cluelist-title">{direction}</h3>
-      <ol className="cluelist-list">
+      <ol className={classnames("cluelist-list", direction)}>
         {clues.map((clue, i) => {
+          const isSelected =
+            currentClueNum === clue.clueNum && currentDirection === direction;
           return (
             <button
               className={classnames("clue", {
-                "clue-selected":
-                  currentClueNum === clue.clueNum &&
-                  currentDirection === direction
+                "clue-selected": isSelected
               })}
+              ref={isSelected ? ref : null}
               key={clue.clueNum}
               type="button"
               onClick={() => onClueListItemClicked(clue.clueNum)}
             >
               <div className="clue-text">
-                <span>{clue.clueNum}. </span>
+                <span className="clue-text-cluenum">{clue.clueNum} </span>
                 <ContentEditable
                   html={clue.text}
                   onChange={e => handleChange(e, i)}
