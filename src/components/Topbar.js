@@ -12,8 +12,8 @@ export default function Topbar() {
         <img className="topbar-wordmark" src={Wordmark} alt="logo" />
       </div>
       <div className="topbar-tools">
-        <DownloadMenu />
         <ToolsMenu />
+        <DownloadMenu />
         <UserMenu />
       </div>
     </div>
