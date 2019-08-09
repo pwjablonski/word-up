@@ -53,8 +53,6 @@ body {
 }
 
 .layout-left {
-  display: flex;
-  flex-direction: column;
   height: 100%;
   width: 48%;
 }
@@ -71,7 +69,6 @@ body {
   }
 
   .layout-left {
-    flex-direction: column;
     width: 100%;
   }
 
