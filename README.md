@@ -1,31 +1,29 @@
 # Word Up
 
-Word Up is a playground for crossword puzzle creators! Inspired by [Phil](http://www.keiranking.com/phil/), Word Up is an approachable enivronment for crossword constuctors of all levels.
+Word Up is a playground for crossword puzzle creators! Inspired by [Phil](http://www.keiranking.com/phil/), Word Up is an approachable enivronment for crossword constructors of all levels.
 
 Go to https://word-up-prod.web.app/ to check it out!
 
 Happy Constructing!!!
 
 ## Features
-- Word lookup using [Datamuse Api](http://www.datamuse.com/api/) makers of [OneLook](https://www.onelook.com/)
+- Word lookup using [Datamuse API](http://www.datamuse.com/api/) makers of [OneLook](https://www.onelook.com/)
 - Toggle Symmetry
 - Random Grid Generator
 - Auto save puzzles
 - Download to NY Times submission PDF
 
-Check out the [Road Map](https://github.com/pwjablonski/word-up/projects/1) to see what in the works! 
+Check out the [Road Map](https://github.com/pwjablonski/word-up/projects/1) to see what's in the works! 
 
-To request a feature or report a bug, you head over [here](https://github.com/pwjablonski/word-up/issues/new)
+To request a feature or report a bug, head over [here](https://github.com/pwjablonski/word-up/issues/new)
 
 ## Tech
 Word Up uses [**React**](https://facebook.github.io/react/) to render views,
 [**Redux**](http://redux.js.org/) to manage application state,
-[**Firebase**](https://firebase.google.com/) for data persistence, authentication and hosting,
+[**Firebase**](https://firebase.google.com/) for data persistence, authentication and hosting.
 
 ### Architecture Overview
-
-The architecture of code base is best understood through the
-lifecycle of a user interaction:
+User interaction lifecycle:
 
 - User interactions are first captured by handlers in React
   [components](https://github.com/pwjablonski/word-up/tree/master/src/components).
@@ -54,6 +52,4 @@ Peter Jablonski
 * [OneLook](http://onelook.com/) and [Crossword Tracker](http://crosswordtracker.com/) search engines
 
 ## License
-Popcode is distributed under the MIT license. See the attached LICENSE file for details.
-
-Contributors
+Word Up is distributed under the MIT license. See the attached LICENSE file for details.
