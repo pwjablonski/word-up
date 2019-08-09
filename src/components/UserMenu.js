@@ -1,6 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { faUser as farUser, faPlusSquare } from "@fortawesome/free-regular-svg-icons";
+import {
+  faUser as farUser,
+  faPlusSquare
+} from "@fortawesome/free-regular-svg-icons";
 import {
   faUser as fasUser,
   faSignInAlt,

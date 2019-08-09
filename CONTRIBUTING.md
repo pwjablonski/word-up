@@ -1,15 +1,47 @@
 # Getting Started
 
+### Checking out the code
 
-### `yarn start`
+Word Up uses Git and GitHub for source control and code collaboration. To contribute, you’ll need your own copy of codebase, in two places: on GitHub, and on your computer.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Go to the [Word Up repo on GitHub](https://github.com/pwjablonski/word-up) and click the **Fork** button in the top-right
+* In your terminal, clone the repository with Git, linking it to both the official repo and your fork:
 
-### `yarn test`
+  ```sh
+  $ git clone -o upstream https://github.com/pwjablonski/word-up.git
+  $ cd word-up
+  $ git remote add origin https://github.com/YOURUSERNAME/word-up.git
+  $ git fetch origin
+  ```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  Be sure to replace `YOURUSERNAME` on the last line with your GitHub username.
+
+### Running the code locally
+
+Make sure you have a local installation of [Node.js](https://nodejs.org/en/download/) and [yarn](https://yarnpkg.com/lang/en/docs/install/).
+
+Once you’ve got it run:
+
+```bash
+$ yarn install
+```
+
+That'll pull down the dependencies. Then run:
+
+```bash
+$ yarn start
+```
+### Running tests
+Before opening a pull request, make sure tests pass by running
+
+```bash
+$ yarn test
+```
+To just run linting enter
+
+```bash
+$ yarn lint
+```
 
 # Deployment
 The application is deployed to Firebase web hosting, using Travis CI to build and push the app. This all happens automatically any time code is merged into the master branch on GitHub.
