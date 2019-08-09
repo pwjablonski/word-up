@@ -1,6 +1,6 @@
 # Word Up
 
-Word Up is a playground for crossword puzzle creators! Inspired by [http://www.keiranking.com/phil/](Phil) Word Up is an approachable enivronment for crossword constuctors of all levels.
+Word Up is a playground for crossword puzzle creators! Inspired by [Phil](http://www.keiranking.com/phil/) Word Up is an approachable enivronment for crossword constuctors of all levels.
 
 
 Go to https://word-up-prod.web.app/ to check it out!
