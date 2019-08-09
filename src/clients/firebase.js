@@ -18,7 +18,7 @@ function buildFirebase(appName = undefined) {
       apiKey: config.firebaseApiKey,
       authDomain: `${config.firebaseApp}.firebaseapp.com`,
       databaseURL: `https://${config.firebaseApp}.firebaseio.com`,
-      projectId: "word-up-dev"
+      projectId: config.firebaseApp
     },
     appName
   );
