@@ -1,14 +1,17 @@
 # Word Up
 
-Word Up is a playground for crossword puzzle creators! Go to https://word-up-prod.web.app/ to check it out!
+Word Up is a playground for crossword puzzle creators! Inspired by [http://www.keiranking.com/phil/](Phil) Word Up is an approachable enivronment for crossword constuctors of all levels.
+
+
+Go to https://word-up-prod.web.app/ to check it out!
 
 Happy Constructing!!!
 
 ## Features
 - Word lookup using [Datamuse Api](http://www.datamuse.com/api/) makers of [OneLook](https://www.onelook.com/)
-- Toggle Symmetry Button
+- Toggle Symmetry
 - Random Grid Generator
-- Auto save Puzzles
+- Auto save puzzles
 - Download to NY Times submission PDF
 
 Check out the [Road Map](https://github.com/pwjablonski/word-up/projects/1) to see what in the works! 
@@ -42,6 +45,14 @@ Interested in contributing to Word Up?? Head over to the [Contribution Guidlines
 
 ## Contributors
 Peter Jablonski
+
+## Crossword resources
+
+* [Word Play](https://www.nytimes.com/column/wordplay)
+* [Rex Parker](https://rexwordpuzzle.blogspot.com/)
+* [Wordlists](http://www.puzzlers.org/dokuwiki/doku.php?id=solving:wordlists:about:start)
+* [Crossword theme categories](http://www.cruciverb.com/index.php?action=ezportal;sa=page;p=70)
+* [OneLook](http://onelook.com/) and [Crossword Tracker](http://crosswordtracker.com/) search engines
 
 ## License
 Popcode is distributed under the MIT license. See the attached LICENSE file for details.
