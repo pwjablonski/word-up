@@ -1,7 +1,6 @@
 # Word Up
 
-Word Up is a playground for crossword puzzle creators! Inspired by [Phil](http://www.keiranking.com/phil/) Word Up is an approachable enivronment for crossword constuctors of all levels.
-
+Word Up is a playground for crossword puzzle creators! Inspired by [Phil](http://www.keiranking.com/phil/), Word Up is an approachable enivronment for crossword constuctors of all levels.
 
 Go to https://word-up-prod.web.app/ to check it out!
 
@@ -16,7 +15,7 @@ Happy Constructing!!!
 
 Check out the [Road Map](https://github.com/pwjablonski/word-up/projects/1) to see what in the works! 
 
-To request a feature or report a bug file you can file an issue [here](https://github.com/pwjablonski/word-up/issues/new)
+To request a feature or report a bug, you head over [here](https://github.com/pwjablonski/word-up/issues/new)
 
 ## Tech
 Word Up uses [**React**](https://facebook.github.io/react/) to render views,
