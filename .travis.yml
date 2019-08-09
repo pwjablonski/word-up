@@ -18,4 +18,4 @@ deploy:
   skip_cleanup: true
   token:
     secure: $firebase
-  project: "word-up-dev"
+  project: $REACT_APP_FIREBASE_PROJECT_ID
