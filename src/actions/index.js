@@ -21,8 +21,8 @@ import {
 import {
   puzzleCreated,
   createPuzzle,
-  updateCellFill,
-  updatePuzzle,
+  fillUpdated,
+  updateGridAndClueNums,
   gridUpdated,
   clueTextChanged,
   authorChanged,
@@ -31,7 +31,9 @@ import {
   generatePattern,
   saveCurrentPuzzle,
   puzzlesLoaded,
-  changeCurrentPuzzle
+  changeCurrentPuzzle,
+  toggleCircle,
+  updateFill
 } from "./puzzles";
 
 import { searchWord, wordsLoaded } from "./words";
@@ -55,8 +57,7 @@ export {
   applicationLoaded,
   puzzleCreated,
   createPuzzle,
-  updateCellFill,
-  updatePuzzle,
+  fillUpdated,
   gridUpdated,
   updateUI,
   clueTextChanged,
@@ -80,5 +81,8 @@ export {
   openPuzzleSelector,
   closePuzzleSelector,
   changeCurrentPuzzle,
-  closeWordSelector
+  closeWordSelector,
+  toggleCircle,
+  updateFill,
+  updateGridAndClueNums
 };

@@ -2,14 +2,15 @@ import produce from "immer";
 import { handleActions } from "redux-actions";
 import {
   puzzleCreated,
-  updateCellFill,
+  fillUpdated,
   gridUpdated,
   authorChanged,
   titleChanged,
   puzzlesLoaded,
   clueTextChanged,
   // userLoggedOut,
-  changeCurrentPuzzle
+  changeCurrentPuzzle,
+  toggleCircle
 } from "../actions";
 
 import createEmptyPuzzle from "../util/createEmptyPuzzle";
@@ -50,7 +51,7 @@ export default handleActions(
         draft = puzzles;
         return draft;
       }),
-    [updateCellFill]: (
+    [fillUpdated]: (
       state,
       { payload: { currentPuzzleKey, cell, fill }, meta: { timestamp } }
     ) =>
@@ -98,6 +99,15 @@ export default handleActions(
       produce(state, draft => {
         draft = { ...state, ...puzzles };
         return draft;
+      }),
+    [toggleCircle]: (
+      state,
+      { payload: { currentPuzzleKey, cell }, meta: { timestamp } }
+    ) =>
+      produce(state, draft => {
+        draft[currentPuzzleKey].grid[cell].hasCircle = !draft[currentPuzzleKey]
+          .grid[cell].hasCircle;
+        draft[currentPuzzleKey].updatedAt = timestamp;
       })
     // [userLoggedOut]: (state, action) =>
     //   produce(state, draft => {

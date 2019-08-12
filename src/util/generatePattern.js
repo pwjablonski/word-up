@@ -55,7 +55,7 @@ export default function generatePattern() {
   const newGrid = [];
 
   for (let i = 0; i < 225; i += 1) {
-    newGrid.push({ index: i, fill: "", clueNum: null });
+    newGrid.push({ index: i, fill: "", clueNum: null, hasCircle: null });
   }
 
   for (let i = 0; i < 225; i += 1) {

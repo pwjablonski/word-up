@@ -7,13 +7,18 @@ export const puzzleCreated = createAction(
 
 export const createPuzzle = createAction("CREATE_PUZZLE");
 
-export const updateCellFill = createAction(
-  "UPDATE_CELL_FILL",
+export const updateFill = createAction("UPDATE_FILL", fill => ({ fill }));
+
+export const fillUpdated = createAction(
+  "FILL_UPDATED",
   (currentPuzzleKey, cell, fill) => ({ currentPuzzleKey, cell, fill }),
   (_currentPuzzleKey, _cell, _fill, timestamp = Date.now()) => ({ timestamp })
 );
 
-export const updatePuzzle = createAction("UPDATE_PUZZLE", key => ({ key }));
+export const updateGridAndClueNums = createAction(
+  "UPDATE_GRID_AND_CLUE_NUMS",
+  key => ({ key })
+);
 
 export const gridUpdated = createAction(
   "GRID_UPDATED",
@@ -59,4 +64,10 @@ export const puzzlesLoaded = createAction("PUZZLES_LOADED", puzzles => ({
 export const changeCurrentPuzzle = createAction(
   "CHANGE_CURRENT_PUZZLE",
   puzzleKey => ({ puzzleKey })
+);
+
+export const toggleCircle = createAction(
+  "TOGGLE_CIRCLE",
+  (currentPuzzleKey, cell) => ({ currentPuzzleKey, cell }),
+  (_currentPuzzleKey, _cell, timestamp = Date.now()) => ({ timestamp })
 );

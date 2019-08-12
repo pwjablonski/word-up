@@ -1,5 +1,10 @@
 import { createLogic } from "redux-logic";
-import { updateUI, updatePuzzle } from "../actions";
+import {
+  updateUI,
+  updateGridAndClueNums,
+  updateFill,
+  saveCurrentPuzzle
+} from "../actions";
 import { getCurrentCell, getCurrentDirection } from "../selectors";
 
 export default createLogic({
@@ -55,8 +60,10 @@ export default createLogic({
         if (currentCell > 14 && currentDirection === "down") {
           nextCell -= 15;
         }
-        await dispatch(updatePuzzle(""));
-        dispatch(updateUI(nextCell, currentDirection));
+        await dispatch(updateFill(""));
+        await dispatch(updateGridAndClueNums());
+        await dispatch(updateUI(nextCell, currentDirection));
+        await dispatch(saveCurrentPuzzle());
         break;
       }
       case "Enter":
@@ -78,8 +85,10 @@ export default createLogic({
         if (currentCell < 210 && currentDirection === "down") {
           nextCell += 15;
         }
-        await dispatch(updatePuzzle(key.toUpperCase()));
-        dispatch(updateUI(nextCell, currentDirection));
+        await dispatch(updateFill(key.toUpperCase()));
+        await dispatch(updateGridAndClueNums());
+        await dispatch(updateUI(nextCell, currentDirection));
+        await dispatch(saveCurrentPuzzle());
         break;
       }
     }
