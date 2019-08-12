@@ -6,7 +6,7 @@ export default function drawPDFGrid(doc, currentPuzzle, shouldDrawFill) {
     if (currentPuzzle.grid[i].hasCircle) {
       doc.circle(
         112.5 + (i % 15) * 25,
-        12.5 + Math.floor(i / 15) * 25,
+        212.5 + Math.floor(i / 15) * 25,
         12,
         "FD"
       );
