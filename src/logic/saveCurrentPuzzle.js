@@ -8,12 +8,15 @@ export default createLogic({
     "SAVE_CURRENT_PUZZLE",
     "AUTHOR_CHANGED",
     "TITLE_CHANGED",
-    "CLUE_TEXT_CHANGED"
+    "CLUE_TEXT_CHANGED",
+    "TOGGLE_CIRCLE",
+    "GENERATE_PATTERN"
   ],
   async process({ getState }, dispatch, done) {
     const state = getState();
     const currentPuzzle = getCurrentPuzzle(state);
     const currentUserId = getCurrentUserId(state);
+
     if (currentPuzzle && currentUserId && !isPristinePuzzle(currentPuzzle)) {
       savePuzzle(currentUserId, currentPuzzle);
     }

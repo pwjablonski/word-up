@@ -3,6 +3,14 @@ export default function drawPDFGrid(doc, currentPuzzle, shouldDrawFill) {
   for (let i = 0; i < currentPuzzle.grid.length; i += 1) {
     doc.setFillColor(currentPuzzle.grid[i].fill === "." ? 0 : 255);
     doc.rect(100 + (i % 15) * 25, 200 + Math.floor(i / 15) * 25, 25, 25, "FD");
+    if (currentPuzzle.grid[i].hasCircle) {
+      doc.circle(
+        112.5 + (i % 15) * 25,
+        12.5 + Math.floor(i / 15) * 25,
+        12,
+        "FD"
+      );
+    }
     if (currentPuzzle.grid[i].clueNum) {
       doc.setFont("helvetica");
       doc.setFontType("normal");

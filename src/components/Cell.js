@@ -29,6 +29,15 @@ export default function Cell({
           { "cell-black-selected": isBlack && isSelected }
         )}
       />
+      {cellData.hasCircle ? (
+        <circle
+          cx={3 + 16.5 + xOffset}
+          cy={3 + 16.5 + yOffset}
+          r="15.0"
+          fill="none"
+          stroke="black"
+        />
+      ) : null}
       <text
         x={5 + xOffset}
         y={14.5 + yOffset}

@@ -23,7 +23,7 @@ export default createLogic({
     const newClues = updateClues(newGrid);
 
     await dispatch(gridUpdated(currentPuzzleKey, newGrid, newClues));
-    dispatch(updateUI(currentCell, currentDirection));
+    await dispatch(updateUI(currentCell, currentDirection));
     done();
   }
 });

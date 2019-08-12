@@ -6,15 +6,22 @@ import {
   faTools,
   faYinYang
 } from "@fortawesome/free-solid-svg-icons";
+import { faCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TopbarButton from "./TopbarButton";
 import TopbarMenu from "./TopbarMenu";
-import { generatePattern, toggleSymmetry } from "../actions";
-import { isSymmetryEnabled } from "../selectors";
+import { generatePattern, toggleSymmetry, toggleCircle } from "../actions";
+import {
+  isSymmetryEnabled,
+  getCurrentPuzzleKey,
+  getCurrentCell
+} from "../selectors";
 
 export default function ToolsMenu() {
   const dispatch = useDispatch();
   const symmetryIsEnabled = useSelector(isSymmetryEnabled);
+  const currentPuzzleKey = useSelector(getCurrentPuzzleKey);
+  const currentCell = useSelector(getCurrentCell);
 
   function onGeneratePattern() {
     dispatch(generatePattern());
@@ -24,6 +31,10 @@ export default function ToolsMenu() {
     dispatch(toggleSymmetry());
   }
 
+  function onToggleCircle() {
+    dispatch(toggleCircle(currentPuzzleKey, currentCell));
+  }
+
   return (
     <div className="topbar-item">
       <TopbarButton name="tools">
@@ -31,13 +42,21 @@ export default function ToolsMenu() {
       </TopbarButton>
       <TopbarMenu name="tools">
         <button
+          className="topbar-menu-item"
+          type="button"
+          onClick={onToggleCircle}
+        >
+          <span> Circle </span>
+          <FontAwesomeIcon icon={faCircle} size="2x" />
+        </button>
+        <button
           className={classnames("topbar-menu-item", {
             "topbar-menu-item-active": symmetryIsEnabled
           })}
           type="button"
           onClick={onToggleSymmetry}
         >
-          <span> Symmetry {symmetryIsEnabled ? "On" : "Off"}</span>
+          <span> Symmetry </span>
           <FontAwesomeIcon icon={faYinYang} size="2x" />
         </button>
         <button
