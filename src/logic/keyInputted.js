@@ -1,10 +1,5 @@
 import { createLogic } from "redux-logic";
-import {
-  updateUI,
-  updateGridAndClueNums,
-  updateFill,
-  saveCurrentPuzzle
-} from "../actions";
+import { updateUI, updateGridAndClueNums, updateFill } from "../actions";
 import { getCurrentCell, getCurrentDirection } from "../selectors";
 
 export default createLogic({
@@ -63,7 +58,6 @@ export default createLogic({
         await dispatch(updateFill(""));
         await dispatch(updateGridAndClueNums());
         await dispatch(updateUI(nextCell, currentDirection));
-        await dispatch(saveCurrentPuzzle());
         break;
       }
       case "Enter":
@@ -88,7 +82,6 @@ export default createLogic({
         await dispatch(updateFill(key.toUpperCase()));
         await dispatch(updateGridAndClueNums());
         await dispatch(updateUI(nextCell, currentDirection));
-        await dispatch(saveCurrentPuzzle());
         break;
       }
     }

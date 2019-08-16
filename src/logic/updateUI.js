@@ -4,7 +4,8 @@ import {
   updateCurrentDirection,
   updateCurrentClue,
   updateHighlightedCells,
-  searchWord
+  searchWord,
+  disableRebusEditing
 } from "../actions";
 import findClueAndHighlightedCells from "../util/findClueAndHighlightedCells";
 import { getCurrentPuzzleGrid, isWordSelectorOpen } from "../selectors";
@@ -24,6 +25,10 @@ export default createLogic({
       action.payload.nextCell,
       grid
     );
+
+    if (grid[action.payload.nextCell].fill === ".") {
+      dispatch(disableRebusEditing());
+    }
 
     if (wordSelectorIsOpen) {
       dispatch(searchWord());

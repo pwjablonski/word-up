@@ -12,7 +12,9 @@ import {
   closePuzzleSelector,
   changeCurrentPuzzle,
   closeWordSelector,
-  wordsLoaded
+  wordsLoaded,
+  toggleRebusEditing,
+  disableRebusEditing
 } from "../actions";
 
 const initialState = {
@@ -22,8 +24,9 @@ const initialState = {
   highlightedCells: [],
   openTopBarMenu: null,
   wordSelectorIsOpen: false,
-  symmetryIsEnabled: false,
-  puzzleSelectorIsOpen: false
+  symmetryIsEnabled: true,
+  puzzleSelectorIsOpen: false,
+  rebusIsEnabled: false
 };
 
 /* eslint-disable no-param-reassign */
@@ -79,6 +82,14 @@ export default handleActions(
     [wordsLoaded]: state =>
       produce(state, draft => {
         draft.wordSelectorIsOpen = true;
+      }),
+    [toggleRebusEditing]: state =>
+      produce(state, draft => {
+        draft.rebusIsEnabled = !state.rebusIsEnabled;
+      }),
+    [disableRebusEditing]: state =>
+      produce(state, draft => {
+        draft.rebusIsEnabled = false;
       })
   },
   initialState

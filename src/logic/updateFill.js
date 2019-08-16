@@ -16,7 +16,7 @@ export default createLogic({
     const currentCell = getCurrentCell(state);
     const symmetryIsEnabled = isSymmetryEnabled(state);
 
-    if (symmetryIsEnabled && action.payload.key === ".") {
+    if (symmetryIsEnabled && action.payload.fill === ".") {
       await dispatch(
         fillUpdated(currentPuzzleKey, currentCell, action.payload.fill)
       );

@@ -4,17 +4,24 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   faChessBoard,
   faTools,
-  faYinYang
+  faYinYang,
+  faFont
 } from "@fortawesome/free-solid-svg-icons";
 import { faCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TopbarButton from "./TopbarButton";
 import TopbarMenu from "./TopbarMenu";
-import { generatePattern, toggleSymmetry, toggleCircle } from "../actions";
+import {
+  generatePattern,
+  toggleSymmetry,
+  toggleCircle,
+  toggleRebusEditing
+} from "../actions";
 import {
   isSymmetryEnabled,
   getCurrentPuzzleKey,
-  getCurrentCell
+  getCurrentCell,
+  isRebusEnabled
 } from "../selectors";
 
 export default function ToolsMenu() {
@@ -22,6 +29,7 @@ export default function ToolsMenu() {
   const symmetryIsEnabled = useSelector(isSymmetryEnabled);
   const currentPuzzleKey = useSelector(getCurrentPuzzleKey);
   const currentCell = useSelector(getCurrentCell);
+  const rebusIsEnabled = useSelector(isRebusEnabled);
 
   function onGeneratePattern() {
     dispatch(generatePattern());
@@ -35,12 +43,26 @@ export default function ToolsMenu() {
     dispatch(toggleCircle(currentPuzzleKey, currentCell));
   }
 
+  function onToggleRebusEditing() {
+    dispatch(toggleRebusEditing());
+  }
+
   return (
     <div className="topbar-item">
       <TopbarButton name="tools">
         <FontAwesomeIcon className="" icon={faTools} size="2x" />
       </TopbarButton>
       <TopbarMenu name="tools">
+        <button
+          className={classnames("topbar-menu-item", {
+            "topbar-menu-item-active": rebusIsEnabled
+          })}
+          type="button"
+          onClick={onToggleRebusEditing}
+        >
+          <span> Rebus </span>
+          <FontAwesomeIcon icon={faFont} size="2x" />
+        </button>
         <button
           className="topbar-menu-item"
           type="button"
