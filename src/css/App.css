@@ -55,6 +55,7 @@ body {
 .layout-left {
   height: 100%;
   width: 48%;
+  position: relative;
 }
 
 .layout-right {
@@ -101,6 +102,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 1px;
 }
 
 .topbar-brand {
@@ -163,6 +165,7 @@ body {
   max-height: 50vh;
   max-width: 30em;
   overflow: auto;
+  z-index: 1;
 }
 
 .topbar-menu-item {
@@ -189,7 +192,7 @@ body {
 }
 
 .topbar-menu-item-active {
-  background-color: #e6e6e6;
+  background-color: #a7d8ff;
 }
 
 .topbar-button-active{
@@ -450,4 +453,14 @@ body {
 
 .puzzle-selector-item-active{
   background-color: #e6e6e6
+}
+
+/* rebus */
+.rebus {
+  border: 3px solid #ffda00;
+  background-color: #ffffff;
+  position: absolute;
+  display: inline-block;
+  font-size: 1.5em;
+  text-align: center;
 }

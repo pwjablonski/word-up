@@ -1,5 +1,5 @@
 import getCurrentClue from "./getCurrentClue";
-import getCurrentCharacter from "./getCurrentCharacter";
+import getCurrentCellData from "./getCurrentCellData";
 import getCurrentDirection from "./getCurrentDirection";
 import getCurrentPuzzleAuthor from "./getCurrentPuzzleAuthor";
 import getCurrentPuzzleGrid from "./getCurrentPuzzleGrid";
@@ -21,9 +21,10 @@ import getCurrentUserId from "./getCurrentUserId";
 import getPuzzles from "./getPuzzles";
 import isPuzzleSelectorOpen from "./isPuzzleSelectorOpen";
 import getCurrentUser from "./getCurrentUser";
+import isRebusEnabled from "./isRebusEnabled";
 
 export {
-  getCurrentCharacter,
+  getCurrentCellData,
   getCurrentClue,
   getCurrentDirection,
   getCurrentPuzzleAuthor,
@@ -45,5 +46,6 @@ export {
   getCurrentUserId,
   getPuzzles,
   isPuzzleSelectorOpen,
-  getCurrentUser
+  getCurrentUser,
+  isRebusEnabled
 };

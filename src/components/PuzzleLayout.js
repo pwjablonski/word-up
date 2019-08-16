@@ -5,6 +5,7 @@ import Board from "./Board";
 import ClueBar from "./ClueBar";
 import ClueList from "./ClueList";
 import PuzzleHeader from "./PuzzleHeader";
+import Rebus from "./Rebus";
 import { getClueLists } from "../selectors";
 
 export default function PuzzleLayout() {
@@ -15,6 +16,7 @@ export default function PuzzleLayout() {
       <div className="layout-left">
         <PuzzleHeader />
         <Board />
+        <Rebus />
       </div>
       <div className="layout-right">
         <ClueBar />

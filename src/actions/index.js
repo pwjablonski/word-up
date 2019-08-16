@@ -15,7 +15,9 @@ import {
   toggleSymmetry,
   openPuzzleSelector,
   closePuzzleSelector,
-  closeWordSelector
+  closeWordSelector,
+  toggleRebusEditing,
+  disableRebusEditing
 } from "./ui";
 
 import {
@@ -84,5 +86,7 @@ export {
   closeWordSelector,
   toggleCircle,
   updateFill,
-  updateGridAndClueNums
+  updateGridAndClueNums,
+  toggleRebusEditing,
+  disableRebusEditing
 };

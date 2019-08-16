@@ -10,7 +10,9 @@ export default createLogic({
     "TITLE_CHANGED",
     "CLUE_TEXT_CHANGED",
     "TOGGLE_CIRCLE",
-    "GENERATE_PATTERN"
+    "GENERATE_PATTERN",
+    "UPDATE_FILL",
+    "UPDATE_GRID_AND_CLUE_NUMS"
   ],
   async process({ getState }, dispatch, done) {
     const state = getState();
