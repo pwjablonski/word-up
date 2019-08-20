@@ -35,7 +35,8 @@ import {
   puzzlesLoaded,
   changeCurrentPuzzle,
   toggleCircle,
-  updateFill
+  updateFill,
+  uploadPuz
 } from "./puzzles";
 
 import { searchWord, wordsLoaded } from "./words";
@@ -88,5 +89,6 @@ export {
   updateFill,
   updateGridAndClueNums,
   toggleRebusEditing,
-  disableRebusEditing
+  disableRebusEditing,
+  uploadPuz
 };

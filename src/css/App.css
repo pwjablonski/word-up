@@ -203,6 +203,9 @@ body {
   color: #000;
 }
 
+.topbar-menu-item_upload {
+  display:none;
+}
 /* Puzzle Header */
 
 .puzzle-header {

@@ -2,7 +2,7 @@ import { createAction } from "redux-actions";
 
 export const puzzleCreated = createAction(
   "PUZZLE_CREATED",
-  (puzzleKey, user) => ({ puzzleKey, user })
+  (puzzleKey, puzzle) => ({ puzzleKey, puzzle })
 );
 
 export const createPuzzle = createAction("CREATE_PUZZLE");
@@ -71,3 +71,5 @@ export const toggleCircle = createAction(
   (currentPuzzleKey, cell) => ({ currentPuzzleKey, cell }),
   (_currentPuzzleKey, _cell, timestamp = Date.now()) => ({ timestamp })
 );
+
+export const uploadPuz = createAction("UPLOAD_PUZ", files => ({ files }));
