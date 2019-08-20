@@ -15,6 +15,7 @@ import saveCurrentPuzzle from "./saveCurrentPuzzle";
 import userAuthenticated from "./userAuthenticated";
 import updateGridAndClueNums from "./updateGridAndClueNums";
 import updateFill from "./updateFill";
+import uploadPuz from "./uploadPuz";
 
 export default [
   applicationLoaded,
@@ -33,5 +34,6 @@ export default [
   logIn,
   logOut,
   saveCurrentPuzzle,
-  userAuthenticated
+  userAuthenticated,
+  uploadPuz
 ];

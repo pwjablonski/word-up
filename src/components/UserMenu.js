@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   faUser as farUser,
@@ -8,15 +8,23 @@ import {
   faUser as fasUser,
   faSignInAlt,
   faSignOutAlt,
-  faFolderOpen
+  faFolderOpen,
+  faUpload
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TopbarButton from "./TopbarButton";
 import TopbarMenu from "./TopbarMenu";
-import { logIn, logOut, openPuzzleSelector, createPuzzle } from "../actions";
+import {
+  logIn,
+  logOut,
+  openPuzzleSelector,
+  createPuzzle,
+  uploadPuz
+} from "../actions";
 import { isUserAuthenticated } from "../selectors";
 
 export default function UserMenu() {
+  const ref = useRef(null);
   const dispatch = useDispatch();
   const isAuthenticated = useSelector(isUserAuthenticated);
   function onStartGoogleLogIn() {
@@ -33,6 +41,15 @@ export default function UserMenu() {
 
   function onCreateNewPuzzle() {
     dispatch(createPuzzle());
+  }
+
+  function onUploadPuz(e) {
+    dispatch(uploadPuz(e.target.files));
+  }
+
+  function openFileSelector() {
+    console.log(ref);
+    ref.current.click();
   }
 
   return (
@@ -54,6 +71,22 @@ export default function UserMenu() {
             >
               <span>New Puzzle</span>
               <FontAwesomeIcon className="" icon={faPlusSquare} size="2x" />
+            </button>
+            <button
+              className="topbar-menu-item"
+              type="button"
+              onClick={openFileSelector}
+            >
+              <input
+                className="topbar-menu-item_upload"
+                type="file"
+                name="file"
+                id="file"
+                onChange={onUploadPuz}
+                ref={ref}
+              />
+              <span> Upload .puz </span>
+              <FontAwesomeIcon className="" icon={faUpload} size="2x" />
             </button>
             <button
               className="topbar-menu-item"

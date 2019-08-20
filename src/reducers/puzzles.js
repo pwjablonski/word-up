@@ -13,7 +13,6 @@ import {
   toggleCircle
 } from "../actions";
 
-import createEmptyPuzzle from "../util/createEmptyPuzzle";
 import isPristinePuzzle from "../util/isPristinePuzzle";
 
 const initialState = {};
@@ -21,7 +20,7 @@ const initialState = {};
 /* eslint-disable no-param-reassign */
 export default handleActions(
   {
-    [puzzleCreated]: (state, { payload: { puzzleKey, user } }) =>
+    [puzzleCreated]: (state, { payload: { puzzleKey, puzzle } }) =>
       produce(state, draft => {
         const puzzles = {};
         Object.keys(state).forEach(key => {
@@ -29,14 +28,7 @@ export default handleActions(
             puzzles[key] = state[key];
           }
         });
-
-        puzzles[puzzleKey] = createEmptyPuzzle(puzzleKey, 15, 15);
-        puzzles[puzzleKey].author = "me";
-        if (user.displayName) {
-          puzzles[puzzleKey].author = user.displayName;
-        } else {
-          puzzles[puzzleKey].author = "No Author";
-        }
+        puzzles[puzzleKey] = puzzle;
         draft = puzzles;
         return draft;
       }),
