@@ -48,7 +48,6 @@ export default function UserMenu() {
   }
 
   function openFileSelector() {
-    console.log(ref);
     ref.current.click();
   }
 
