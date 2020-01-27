@@ -4,7 +4,7 @@ Word Up is a playground for crossword puzzle creators! Inspired by [Phil](http:/
 
 Go to https://word-up-prod.web.app/ to check it out!
 
-Happy Constructing!!!!
+Happy Constructing!
 
 ## Features
 - Word lookup using [Datamuse API](http://www.datamuse.com/api/) makers of [OneLook](https://www.onelook.com/)
